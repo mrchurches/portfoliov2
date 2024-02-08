@@ -19,6 +19,11 @@
 body {
 }
 
+
+#subtitle-home{
+  background-color: #D0BCA8;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
