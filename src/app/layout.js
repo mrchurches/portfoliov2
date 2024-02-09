@@ -13,11 +13,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-      <nav className="flex w-full justify-between p-4">
+      <nav className="flex justify-between p-4">
         <div>Laureano Iglesias</div>
         <ul className="flex justify-self-end gap-3">
-          <li><Link href="/">Home</Link></li>
-          <li><Link href="/about">About</Link></li>
+          <li><Link href="/">About</Link></li>
           <li><Link href="/projects">Projects</Link></li>
           <li><Link href="/contact">Contact</Link></li>
         </ul>

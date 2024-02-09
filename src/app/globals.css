@@ -17,11 +17,26 @@
 }
 
 body {
+  max-height: 100vh;
 }
 
+.image-home{
+  height: calc(100vh - 3.149rem);
+}
 
 #subtitle-home{
   background-color: #D0BCA8;
+}
+
+.embla {
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+}
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
 }
 
 @layer utilities {
