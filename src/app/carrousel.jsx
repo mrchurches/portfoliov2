@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 
-const Carousel = ({ images }) => {
+export default function Carousel ({ images }){
   const [index, setIndex] = useState(0);
 
   const nextImage = () => {
@@ -33,5 +33,3 @@ const Carousel = ({ images }) => {
     </div>
   );
 };
-
-export default Carousel;

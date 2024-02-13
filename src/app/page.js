@@ -70,11 +70,11 @@ export default function Home() {
             <h2 className="pb-2 font-semibold text-xl lg:text-2xl">{l.home.title}</h2>
             <p className="text-sm lg:text-xl">{l.home.subtitle}</p>
           </div>
-          <div class="w-40 h-40 rounded-full overflow-hidden self-end mt-10">
+          <div className="w-40 h-40 rounded-full overflow-hidden self-end mt-10">
             <img
               src="/personal-home.jpg"
               alt="image of the owner of the porfolio"
-              class="w-full h-full object-cover"
+              className="w-full h-full object-cover"
             />
           </div>
         </div>
@@ -103,8 +103,8 @@ export default function Home() {
                 className={`flex flex-wrap ${!darkMode && "text-slate-300"}`}
                 id=""
               >
-                {l.skills.all[selectedSkills].map((stack) => (
-                  <li
+                {l.skills.all[selectedSkills].map((stack,index) => (
+                  <li key={stack+selectedSkills+index}
                     className={`${buttonsBg} ${textColor} ${hoverButtonBg} p-2 m-1 rounded-lg`}
                   >
                     {stack}
@@ -120,6 +120,7 @@ export default function Home() {
             <div className={`flex gap-2 overflow-auto whitespace-nowrap`}>
               {l.projects.content.map((p, i) => (
                 <h3
+                  key={p.title+i+selectedProject}
                   className={`w-full break-keep text-md flex gap-x-1 p-2 items-center rounded-lg ${hoverButtonBg} hover:cursor-pointer ${textColor} ${
                     selectedProject == i && selectedButtonBg
                   } ${selectedProject == i && !darkMode && "text-slate-300"}`}
