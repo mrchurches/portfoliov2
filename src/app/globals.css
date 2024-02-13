@@ -44,3 +44,28 @@ body {
     text-wrap: balance;
   }
 }
+
+:root {
+  --scrollbar-track-color-dark: #2e4169; /* Color de fondo de la barra de desplazamiento en modo oscuro */
+  --scrollbar-thumb-color-dark: #1c273f; /* Color del indicador de la barra de desplazamiento en modo oscuro */
+  --scrollbar-track-color-light: #f1f1f1; /* Color de fondo de la barra de desplazamiento en modo claro */
+  --scrollbar-thumb-color-light: #888; /* Color del indicador de la barra de desplazamiento en modo claro */
+}
+
+/* Estilos para la barra de desplazamiento en Google Chrome */
+::-webkit-scrollbar {
+  width: 10px; /* Ancho de la barra de desplazamiento */
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track-color-dark); /* Usamos la variable para el color de fondo */
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb-color-dark); /* Usamos la variable para el color del indicador */
+  border-radius: 5px; /* Radio de borde del indicador de la barra de desplazamiento */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: darken(var(--scrollbar-thumb-color-dark), 10%); /* Cambiamos el color al pasar el cursor */
+}

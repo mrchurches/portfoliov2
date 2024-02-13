@@ -2,5 +2,64 @@
     "home": {
         "title": "Hi 🖐️ im Laureano!",
         "subtitle": "Dev and tech enthusiast, constantly seeking to improve my understanding and skills in technology."
+    },
+       "skills": {
+        "title": "Skills",
+        "categories": ["Software","Other tech skills", "Languages"],
+        "all": [
+            [ "PERN Stack (PostgreSQL, Express, React, Node)",
+            "Ruby on Rails","JavaScript","Ruby","Stimulus","Turbo frames","AlpineJS", "React", "Redux", "HTML", "CSS", "Git","Sequelize", "Firebase"],
+            ["Windows","Linux bash", "Vercel", "Heroku", "Scrum Agile Method"],
+            ["English","Spanish"]
+        ]
+    },
+    "projects": {
+        "title": "Projects",
+        "content": [
+            {
+                "title": "World-app",
+                "description": "A web app that allows you to search for countries and see their information. It was built using the PERN stack and it's deployed on Vercel.",
+                "link": "https://world-app-churches.vercel.app/",
+                "image": "./world-app-1.png"
+            },
+            {
+                "title": "Tic-tac-toe",
+                "description": "A simple tic-tac-toe game built with React. It's deployed on Vercel.",
+                "link": "https://tic-tac-toe-ten-umber.vercel.app/",
+                "image": "./world-app-1.png"
+            },
+            {
+                "title": "Ecommerce-videogames",
+                "description": "A web app that allows you to search for videogames and see their information. It was built using the PERN stack and it's deployed on Vercel.",
+                "link": "https://ecommerce-videogames.vercel.app/",
+                "image": "./world-app-1.png"
+            },
+            {
+                "title": "Weather-app",
+                "description": "A web app that allows you to search for the weather in any city. It was built using the PERN stack and it's deployed on Vercel.",
+                "link": "https://weather-app-umber.vercel.app/",
+                "image": "./world-app-1.png"
+            },
+            {
+                "title": "Todo-app",
+                "description": "A simple todo app built with React. It's deployed on Vercel.",
+                "link": "https://todo-app-umber.vercel.app/",
+                "image": "./world-app-1.png"
+            },
+            {
+                "title": "Calculator",
+                "description": "A simple calculator built with React. It's deployed on Vercel.",
+                "link": "https://calculator-umber.vercel.app/",
+                "image": "./world-app-1.png"
+            }
+        ]
+    },
+    "contact": {
+        "title": "Contact",
+        "content":"",
+        "linkedin": "https://www.linkedin.com/in/laureano-iglesias/",
+        "github": "https://github.com/mrchurches",
+        "email": "laureanoiglesias34@gmail.com",
+        "wsp": "https://api.whatsapp.com/send/?phone=5401125120795&text=Hola%20me%20interesa%20tu%20perfil!"
     }
 }
