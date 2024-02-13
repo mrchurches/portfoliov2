@@ -10,7 +10,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import { FaRegMoon } from "react-icons/fa";
 import { MdOutlineWbSunny } from "react-icons/md";
 import { FaFileDownload } from "react-icons/fa";
-import Carousel from "./carrousel";
+import Carousel from "./carousel";
 
 import Link from "next/link";
 import { IconContext } from "react-icons";
