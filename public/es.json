@@ -20,14 +20,14 @@
                 "title": "World-app",
                 "description": "Una web app que te permite buscar paises, ver su información y que actividades se pueden hacer en él.La idea fue poner en práctica todo el proceso CRUD utilizando el stack PERN y está desployada en Vercel.",
                 "link": "https://world-app-churches.vercel.app/",
-                "image": ["./world-app-1.png","./world-app-2.png","./world-app-3.png"],
+                "image": ["/world-app-1.png","/world-app-2.png","/world-app-3.png"],
                 "clickeable": true
             },
             {
                 "title": "Ecommerce-videogames",
                 "description": "A web app that allows you to search for videogames and see their information. It was built using the PERN stack and it's deployed on Vercel.",
                 "link": "https://ecommerce-videogames.vercel.app/",
-                "image": ["./ecommerce-1.png","./ecommerce-2.png","./ecommerce-3.png"],
+                "image": ["/ecommerce-1.png","/ecommerce-2.png","/ecommerce-3.png"],
                 "clickeable": true
 
             }

@@ -25,7 +25,7 @@ export default function Home() {
     en: en,
   };
   const l = languageJson[lang];
-  const icon = [<BiAward />, <BiSolidWindowAlt />, <LiaLanguageSolid />];
+  const icon = [<BiAward key="00000001" />, <BiSolidWindowAlt key="00000002"/>, <LiaLanguageSolid key="00000003"/>];
   let project = l.projects.content[selectedProject];
   let bg = darkMode ? "bg-gray-900" : "bg-white";
   let colorFont = darkMode ? "text-slate-300" : "text-slate-900";

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 
@@ -20,11 +21,13 @@ export default function Carousel ({ images }){
     <div className="carousel">
       <div className="carousel-inner w-auto h-96">
         {images.map((image, i) => (
-          <img
+          <Image
             key={i}
             src={image}
             alt={`Image ${i}`}
             className={`${i === index ? "active" : "hidden"} object-cover rounded-lg`}
+            width={1000}
+            height={10000}
           />
         ))}
       </div>
