@@ -69,3 +69,58 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: darken(var(--scrollbar-thumb-color-dark), 10%); /* Cambiamos el color al pasar el cursor */
 }
+
+.carousel {
+  position: relative;
+}
+
+.carousel-inner {
+  position: relative; /* Agregamos position: relative */
+  display: flex;
+  overflow: hidden;
+}
+
+.carousel-inner img {
+  width: 100%;
+  height: auto; /* Cambiamos height: 100% a height: auto */
+  transition: transform 0.5s ease;
+}
+
+.prev-btn,
+.next-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  z-index: 2;
+}
+
+.prev-btn {
+  left: 10px;
+}
+
+.next-btn {
+  right: 10px;
+}
+
+.carousel-inner {
+  display: flex;
+  transition: transform 1s ease;
+}
+
+.carousel-inner img {
+  height: auto;
+}
+
+.active {
+  opacity: 1;
+}
+
+.hidden {
+  opacity: 0;
+}

@@ -20,37 +20,16 @@
                 "title": "World-app",
                 "description": "A web app that allows you to search for countries and see their information. It was built using the PERN stack and it's deployed on Vercel.",
                 "link": "https://world-app-churches.vercel.app/",
-                "image": "./world-app-1.png"
-            },
-            {
-                "title": "Tic-tac-toe",
-                "description": "A simple tic-tac-toe game built with React. It's deployed on Vercel.",
-                "link": "https://tic-tac-toe-ten-umber.vercel.app/",
-                "image": "./world-app-1.png"
+                "image": ["./world-app-1.png","./world-app-2.png","./world-app-3.png"],
+                "clickeable": true
             },
             {
                 "title": "Ecommerce-videogames",
                 "description": "A web app that allows you to search for videogames and see their information. It was built using the PERN stack and it's deployed on Vercel.",
                 "link": "https://ecommerce-videogames.vercel.app/",
-                "image": "./world-app-1.png"
-            },
-            {
-                "title": "Weather-app",
-                "description": "A web app that allows you to search for the weather in any city. It was built using the PERN stack and it's deployed on Vercel.",
-                "link": "https://weather-app-umber.vercel.app/",
-                "image": "./world-app-1.png"
-            },
-            {
-                "title": "Todo-app",
-                "description": "A simple todo app built with React. It's deployed on Vercel.",
-                "link": "https://todo-app-umber.vercel.app/",
-                "image": "./world-app-1.png"
-            },
-            {
-                "title": "Calculator",
-                "description": "A simple calculator built with React. It's deployed on Vercel.",
-                "link": "https://calculator-umber.vercel.app/",
-                "image": "./world-app-1.png"
+                "image": ["./ecommerce-1.png","./ecommerce-2.png","./ecommerce-3.png"],
+                "clickeable": true
+
             }
         ]
     },

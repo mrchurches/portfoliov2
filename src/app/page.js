@@ -9,7 +9,8 @@ import { BsLinkedin } from "react-icons/bs";
 import { FaWhatsapp } from "react-icons/fa";
 import { FaRegMoon } from "react-icons/fa";
 import { MdOutlineWbSunny } from "react-icons/md";
-
+import { FaFileDownload } from "react-icons/fa";
+import Carousel from "./carrousel";
 
 import Link from "next/link";
 import { IconContext } from "react-icons";
@@ -28,7 +29,9 @@ export default function Home() {
   let project = l.projects.content[selectedProject];
   let bg = darkMode ? "bg-gray-900" : "bg-white";
   let colorFont = darkMode ? "text-slate-300" : "text-slate-900";
-  let hoverButtonBg = darkMode ? "hover:bg-gray-700" : "hover:bg-slate-300 hover:text-slate-900";
+  let hoverButtonBg = darkMode
+    ? "hover:bg-gray-700"
+    : "hover:bg-slate-300 hover:text-slate-900";
   let buttonsBg = darkMode ? "bg-gray-800" : "bg-slate-200";
   let textColor = darkMode ? "text-slate-300" : "text-slate-900";
   let selectedButtonBg = darkMode ? "bg-gray-800" : "bg-slate-200";
@@ -36,9 +39,16 @@ export default function Home() {
   useEffect(() => {
     project = l.projects.content[selectedProject];
   }, [selectedProject]);
-  useEffect(()=>{
-    darkMode ? (bg="bg-gray-900", textColor="text-slate-300", selectedButtonBg="bg-gray-700",buttonsBg="bg-gray-800")
-    : (bg = "bg-white", textColor="text-slate-900", selectedButtonBg="bg-gray-800",buttonsBg="bg-slate-200")
+  useEffect(() => {
+    darkMode
+      ? ((bg = "bg-gray-900"),
+        (textColor = "text-slate-300"),
+        (selectedButtonBg = "bg-gray-700"),
+        (buttonsBg = "bg-gray-800"))
+      : ((bg = "bg-white"),
+        (textColor = "text-slate-900"),
+        (selectedButtonBg = "bg-gray-800"),
+        (buttonsBg = "bg-slate-200"));
     const root = document.documentElement;
     root.style.setProperty(
       "--scrollbar-track-color-dark",
@@ -48,16 +58,17 @@ export default function Home() {
       "--scrollbar-thumb-color-dark",
       darkMode ? "#1c273f" : "#888"
     );
-  },[darkMode])
+  }, [darkMode]);
+
 
   return (
     <div className={`flex justify-center pt-5 ${bg} ${textColor}`}>
       <div className="flex w-10/12 lg:w-5/12 flex-col h-content ">
         <div className="flex justify-between" id="about">
-          <div className="w-8/12">
-            <h1 className="pb-5 font-bold">Portfolio</h1>
-            <h2 className="pb-2 font-semibold">{l.home.title}</h2>
-            <p className="">{l.home.subtitle}</p>
+          <div className="w-6/12 lg:w-8/12">
+            <h1 className="pb-5 font-bold text-3xl lg:text-5xl">Portfolio</h1>
+            <h2 className="pb-2 font-semibold text-xl lg:text-2xl">{l.home.title}</h2>
+            <p className="text-sm lg:text-xl">{l.home.subtitle}</p>
           </div>
           <div class="w-40 h-40 rounded-full overflow-hidden self-end mt-10">
             <img
@@ -67,7 +78,7 @@ export default function Home() {
             />
           </div>
         </div>
-        <div className=" pt-4" id="skills">
+        <div className="pt-5 lg:pt-10" id="skills">
           <div>
             <h2 className="text-lg font-bold">{l.skills.title}</h2>
             <div>
@@ -87,10 +98,15 @@ export default function Home() {
                 ))}
               </ul>
             </div>
-            <div className="pb-3 sm:h-[11rem]">
-              <ul className={`flex flex-wrap ${!darkMode&&"text-slate-300"}`} id="">
+            <div className="pb-3 ">
+              <ul
+                className={`flex flex-wrap ${!darkMode && "text-slate-300"}`}
+                id=""
+              >
                 {l.skills.all[selectedSkills].map((stack) => (
-                  <li className={`${buttonsBg} ${textColor} ${hoverButtonBg} p-2 m-1 rounded-lg`}>
+                  <li
+                    className={`${buttonsBg} ${textColor} ${hoverButtonBg} p-2 m-1 rounded-lg`}
+                  >
                     {stack}
                   </li>
                 ))}
@@ -106,15 +122,22 @@ export default function Home() {
                 <h3
                   className={`w-full break-keep text-md flex gap-x-1 p-2 items-center rounded-lg ${hoverButtonBg} hover:cursor-pointer ${textColor} ${
                     selectedProject == i && selectedButtonBg
-                  } ${selectedProject == i && !darkMode&&"text-slate-300"}`}
-                  onClick={() => setSelectedProject(i)}
+                  } ${selectedProject == i && !darkMode && "text-slate-300"}`}
+                  onClick={() =>
+                    l.projects.content[i].clickeable == true &&
+                    setSelectedProject(i)
+                  }
                 >
                   {p.title}
                 </h3>
               ))}
             </div>
-            <div className={`my-3 py-4 rounded-lg ${darkMode? 'bg-gray-800':'bg-slate-300'} p-2`}>
-              <img src={project.image} alt={project.title} />
+            <div
+              className={`my-3 py-4 rounded-lg ${
+                darkMode ? "bg-gray-800" : "bg-slate-300"
+              } p-2`}
+            >
+              <Carousel images={project.image} />
               <p className="pt-4">{project.description}</p>
               <Link href={project.link} target="_blank">
                 <div className="pt-2 text-sky-600">Deploy</div>
@@ -137,18 +160,27 @@ export default function Home() {
               <Link href={l.contact.wsp} target="_blank">
                 <FaWhatsapp />
               </Link>
+              <Link href={l.contact.cv} target="_blank">
+                <FaFileDownload />
+              </Link>
             </IconContext.Provider>
           </div>
         </div>
-        <div className="flex fixed bottom-2 right-2 p-3 gap-x-2">
+        <div className="flex flex-col fixed bottom-2 right-2  gap-y-2">
           <div
-            className="rounded-lg p-2 bg-gray-800"
+            className="rounded-lg p-3 bg-gray-800"
             onClick={() => setDarkMode(!darkMode)}
           >
-            {darkMode ?  <MdOutlineWbSunny /> : <FaRegMoon color="rgb(192,213,225)"/>}
+            {darkMode ? (
+              <MdOutlineWbSunny />
+            ) : (
+              <FaRegMoon color="rgb(192,213,225)" />
+            )}
           </div>
           <div
-            className={`rounded-lg p-2 bg-gray-800 ${!darkMode&&'text-slate-300'}`}
+            className={`rounded-lg p-2 bg-gray-800 ${
+              !darkMode && "text-slate-300"
+            }`}
             onClick={() => setLang(lang == "es" ? "en" : "es")}
           >
             {lang == "es" ? "EN" : "ES"}
