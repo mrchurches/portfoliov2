@@ -18,14 +18,14 @@
         "content": [
             {
                 "title": "World-app",
-                "description": "A web app that allows you to search for countries and see their information. It was built using the PERN stack and it's deployed on Vercel.",
+                "description": "I designed and developed a country information application, including search, filter, sort and create related activities. I used React, Redux and CSS for the frontend, and Node.js with Express on the backend, with a PostgreSQL database and Sequelize.\nThe main challenge was to apply my knowledge individually for the first time, which allowed me to consolidate my skills and demonstrate my ability to work autonomously on complex projects.",
                 "link": "https://world-app-churches.vercel.app/",
                 "image": ["/world-app-1.png","/world-app-2.png","/world-app-3.png"],
                 "clickeable": true
             },
             {
                 "title": "Ecommerce-videogames",
-                "description": "A web app that allows you to search for videogames and see their information. It was built using the PERN stack and it's deployed on Vercel.",
+                "description": "On the backend, Node.js with Express was used, along with tools such as Auth0 and NodeMailer. The database was built in PostgreSQL and managed with Sequelize. On the other hand, the frontend used technologies such as React, Redux, Bootstrap, Cloudinary, MercadoPago Checkout and SweetAlerts. The project stood out for several key functionalities, such as authentication with Google and local registration, a guest mode with shopping cart, and a payment gateway integrated with Mercado Pago Checkout and PayPal in the React Native version of the application. In addition, an administration dashboard was implemented to manage users, bans, sales and comments, along with a mailing system. One of the main challenges for the team was the planning and organisation, including the selection of technologies and the distribution of tasks for the development of the application. My key contribution focused on the logical problem solving and organisation of the frontend, especially the implementation of the shopping cart and payment gateway.",
                 "link": "https://ecommerce-videogames.vercel.app/",
                 "image": ["/ecommerce-1.png","/ecommerce-2.png","/ecommerce-3.png"],
                 "clickeable": true
@@ -41,5 +41,8 @@
         "email": "laureanoiglesias34@gmail.com",
         "wsp": "https://api.whatsapp.com/send/?phone=5401125120795&text=Hola%20me%20interesa%20tu%20perfil!",
         "cv": "https://drive.google.com/file/d/1EVQi5fK78jSgDEDKj5Ozqy1Zd9EWR8Fd/view?usp=sharing"
-    } 
+    },
+    "footer":{
+        "content": "All rights reserved ©. Laureano Iglesias 2024."
+    }
 }

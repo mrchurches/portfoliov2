@@ -18,14 +18,14 @@
         "content": [
             {
                 "title": "World-app",
-                "description": "Una web app que te permite buscar paises, ver su información y que actividades se pueden hacer en él.La idea fue poner en práctica todo el proceso CRUD utilizando el stack PERN y está desployada en Vercel.",
+                "description": "Diseñé y desarrollé una aplicación de información sobre países, incluyendo funcionalidades de búsqueda, filtrado, ordenamiento y creación de actividades relacionadas. Utilicé React, Redux y CSS para el frontend, y Node.js con Express en el backend, con una base de datos PostgreSQL y Sequelize. El desafío principal fue aplicar por primera vez mis conocimientos de manera individual, lo que me permitió consolidar mis habilidades y demostrar mi capacidad para trabajar de forma autónoma en proyectos complejos.",
                 "link": "https://world-app-churches.vercel.app/",
                 "image": ["/world-app-1.png","/world-app-2.png","/world-app-3.png"],
                 "clickeable": true
             },
             {
                 "title": "Ecommerce-videogames",
-                "description": "A web app that allows you to search for videogames and see their information. It was built using the PERN stack and it's deployed on Vercel.",
+                "description": "En el backend, se utilizó Node.js con Express, junto con herramientas como Auth0 y NodeMailer. La base de datos se construyó en PostgreSQL y se gestionó con Sequelize. Por otro lado, en el frontend se emplearon tecnologías como React, Redux, Bootstrap, Cloudinary, MercadoPago Checkout y SweetAlerts. El proyecto destacó por diversas funcionalidades clave, como la autenticación con Google y el registro local, un modo invitado con carrito de compras, y una pasarela de pagos integrada con Mercado Pago Checkout y PayPal en la versión de la aplicación para React Native. Además, se implementó un dashboard de administración para la gestión de usuarios, baneos, ventas y comentarios, junto con un sistema de mailing. Uno de los principales desafíos para el equipo fue la planificación y organización, incluida la selección de tecnologías y la distribución de tareas para el desarrollo de la aplicación. Mi contribución clave se centró en la resolución de problemas lógicos y la organización del frontend, especialmente en la implementación del carrito de compras y la pasarela de pagos",
                 "link": "https://ecommerce-videogames.vercel.app/",
                 "image": ["/ecommerce-1.png","/ecommerce-2.png","/ecommerce-3.png"],
                 "clickeable": true
@@ -41,5 +41,8 @@
         "email": "laureanoiglesias34@gmail.com",
         "wsp": "https://api.whatsapp.com/send/?phone=5401125120795&text=Hola%20me%20interesa%20tu%20perfil!",
         "cv": "https://drive.google.com/file/d/1EVQi5fK78jSgDEDKj5Ozqy1Zd9EWR8Fd/view?usp=sharing"
+    },
+    "footer": {
+        "content": "Todos los derechos reservados©. Laureano Iglesias 2024."
     }
 }

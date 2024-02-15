@@ -187,6 +187,11 @@ export default function Home() {
             {lang == "es" ? "EN" : "ES"}
           </div>
         </div>
+        <div>
+          <p className="text-xs text-center italic py-4">
+            {l.footer.content}
+          </p>
+        </div>
       </div>
     </div>
   );
