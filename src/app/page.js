@@ -25,10 +25,13 @@ export default function Home() {
     en: en,
   };
   const l = languageJson[lang];
-  const icon = [<BiAward key="00000001" />, <BiSolidWindowAlt key="00000002"/>, <LiaLanguageSolid key="00000003"/>];
+  const icon = [
+    <BiAward key="00000001" />,
+    <BiSolidWindowAlt key="00000002" />,
+    <LiaLanguageSolid key="00000003" />,
+  ];
   let project = l.projects.content[selectedProject];
   let bg = darkMode ? "bg-gray-900" : "bg-white";
-  let colorFont = darkMode ? "text-slate-300" : "text-slate-900";
   let hoverButtonBg = darkMode
     ? "hover:bg-gray-700"
     : "hover:bg-slate-300 hover:text-slate-900";
@@ -60,14 +63,15 @@ export default function Home() {
     );
   }, [darkMode]);
 
-
   return (
     <div className={`flex justify-center pt-5 ${bg} ${textColor}`}>
-      <div className="flex w-10/12 lg:w-5/12 flex-col h-content ">
+      <div className="flex w-10/12 lg:w-5/12 flex-col h-content gap-y-6">
         <div className="flex justify-between" id="about">
           <div className="w-6/12 lg:w-8/12">
             <h1 className="pb-5 font-bold text-3xl lg:text-5xl">Portfolio</h1>
-            <h2 className="pb-2 font-semibold text-xl lg:text-2xl">{l.home.title}</h2>
+            <h2 className="pb-2 font-semibold text-xl lg:text-2xl">
+              {l.home.title}
+            </h2>
             <p className="text-sm lg:text-xl">{l.home.subtitle}</p>
           </div>
           <div className="w-40 h-40 rounded-full overflow-hidden self-end mt-10">
@@ -78,7 +82,8 @@ export default function Home() {
             />
           </div>
         </div>
-        <div className="pt-5 lg:pt-10" id="skills">
+        <div className={`w-full h-[0.005rem] ${darkMode? 'bg-slate-300' : 'bg-slate-900'}`}></div>
+        <div className="" id="skills">
           <div>
             <h2 className="text-lg font-bold">{l.skills.title}</h2>
             <div>
@@ -98,13 +103,14 @@ export default function Home() {
                 ))}
               </ul>
             </div>
-            <div className="pb-3 ">
+            <div className="">
               <ul
                 className={`flex flex-wrap ${!darkMode && "text-slate-300"}`}
                 id=""
               >
-                {l.skills.all[selectedSkills].map((stack,index) => (
-                  <li key={stack+selectedSkills+index}
+                {l.skills.all[selectedSkills].map((stack, index) => (
+                  <li
+                    key={stack + selectedSkills + index}
                     className={`${buttonsBg} ${textColor} ${hoverButtonBg} p-2 m-1 rounded-lg`}
                   >
                     {stack}
@@ -114,14 +120,15 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <div className={`w-full h-[0.005rem] ${darkMode? 'bg-slate-300' : 'bg-slate-900'}`}></div>
         <div className="" id="projects">
-          <h2 className="text-lg font-bold">{l.projects.title}</h2>
+          <h2 className="text-lg font-bold pb-3">{l.projects.title}</h2>
           <div>
-            <div className={`flex gap-2 overflow-auto whitespace-nowrap`}>
+            <div className={`flex gap-2 overflow-auto whitespace-nowrap `}>
               {l.projects.content.map((p, i) => (
                 <h3
-                  key={p.title+i+selectedProject}
-                  className={`w-full break-keep text-md flex gap-x-1 p-2 items-center rounded-lg ${hoverButtonBg} hover:cursor-pointer ${textColor} ${
+                  key={p.title + i + selectedProject}
+                  className={`w-full break-keep text-md flex gap-x-1 p-2 items-center rounded-lg ${hoverButtonBg} justify-center hover:cursor-pointer ${textColor} ${
                     selectedProject == i && selectedButtonBg
                   } ${selectedProject == i && !darkMode && "text-slate-300"}`}
                   onClick={() =>
@@ -134,18 +141,21 @@ export default function Home() {
               ))}
             </div>
             <div
-              className={`my-3 py-4 rounded-lg ${
+              className={`my-3 p-4 rounded-lg ${
                 darkMode ? "bg-gray-800" : "bg-slate-300"
               } p-2`}
             >
               <Carousel images={project.image} />
-              <p className="pt-4">{project.description}</p>
+              <p className="pt-4 px-5 font-light">{project.description}</p>
               <Link href={project.link} target="_blank">
-                <div className="pt-2 text-sky-600">Deploy</div>
+                <div className="flex pt-2 pr-3 text-sky-600 gap-x-2 items-center w-full justify-end">
+                  Github <SiGithub />
+                </div>
               </Link>
             </div>
           </div>
         </div>
+        <div className={`w-full h-[0.005rem] ${darkMode? 'bg-slate-300' : 'bg-slate-900'}`}></div>
         <div className="" id="contact">
           <h2 className="text-lg font-bold">{l.contact.title}</h2>
           <div className="flex justify-center gap-x-4 m-4">
@@ -167,7 +177,7 @@ export default function Home() {
             </IconContext.Provider>
           </div>
         </div>
-        <div className="flex flex-col fixed bottom-2 right-2  gap-y-2">
+        <div className="flex flex-col fixed bottom-2 right-2 gap-y-2" id="sideBar">
           <div
             className="rounded-lg p-3 bg-gray-800"
             onClick={() => setDarkMode(!darkMode)}
@@ -187,10 +197,8 @@ export default function Home() {
             {lang == "es" ? "EN" : "ES"}
           </div>
         </div>
-        <div>
-          <p className="text-xs text-center italic py-4">
-            {l.footer.content}
-          </p>
+        <div id="footer">
+          <p className="text-xs text-center italic py-4">{l.footer.content}</p>
         </div>
       </div>
     </div>

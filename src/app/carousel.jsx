@@ -19,13 +19,13 @@ export default function Carousel ({ images }){
 
   return (
     <div className="carousel">
-      <div className="carousel-inner w-auto h-96">
+      <div className="carousel-inner w-auto h-96 p-2">
         {images.map((image, i) => (
           <Image
             key={i}
             src={image}
             alt={`Image ${i}`}
-            className={`${i === index ? "active" : "hidden"} object-cover rounded-lg`}
+            className={`${i === index ? "active" : "hidden"} object-cover rounded-xl`}
             width={1000}
             height={10000}
           />
