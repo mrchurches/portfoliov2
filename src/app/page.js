@@ -10,10 +10,11 @@ import { FaWhatsapp } from "react-icons/fa";
 import { FaRegMoon } from "react-icons/fa";
 import { MdOutlineWbSunny } from "react-icons/md";
 import { FaFileDownload } from "react-icons/fa";
-import Carousel from "./carousel";
+import Carousel from "./components/carousel";
 
 import Link from "next/link";
 import { IconContext } from "react-icons";
+import Navbar from "./components/navbar";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(true);
@@ -66,9 +67,10 @@ export default function Home() {
   return (
     <div className={`flex justify-center pt-5 ${bg} ${textColor}`}>
       <div className="flex w-10/12 lg:w-5/12 flex-col h-content gap-y-6">
-        <div className="flex justify-between" id="about">
-          <div className="w-6/12 lg:w-8/12">
-            <h1 className="pb-5 font-bold text-3xl lg:text-5xl">Portfolio</h1>
+      <Navbar />
+        <div className="flex justify-between pt-10" id="about">
+          <div className="w-6/12 lg:w-8/12 pt-10">
+            {/* <h1 className="pb-5 font-bold text-3xl lg:text-5xl">Portfolio</h1> */}
             <h2 className="pb-2 font-semibold text-xl lg:text-2xl">
               {l.home.title}
             </h2>
