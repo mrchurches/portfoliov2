@@ -3,7 +3,7 @@ import { GrStatusGoodSmall } from "react-icons/gr";
 
 export default function Card({ project }) {
   return (
-    <article className="w-2/5 flex flex-col gap-y-4 hover:bg-slate-800 rounded-xl p-4 transition ">
+    <article className="w-full lg:w-2/5 flex flex-col gap-y-4 hover:bg-slate-800 rounded-xl p-4 transition ">
       <img
         src={project.image[0]}
         alt={project.title}
