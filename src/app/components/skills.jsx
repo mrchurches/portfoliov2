@@ -42,7 +42,7 @@ export default function Skills({ l, darkMode }) {
   return (
     <section id="skills" className="flex flex-col wrap gap-y-4">
       <h2 className="text-xl"><strong>{l.skills.title}</strong></h2>
-      <ul className="flex flex-wrap gap-x-6 gap-y-2 pt-4">
+      <ul className="flex flex-wrap gap-x-6 gap-y-2 pt-4 justify-center lg:justify-start">
         {l.skills.content.map(({ name, icon }, i) => {
           const Icon = skillsIcons[name];
           return (

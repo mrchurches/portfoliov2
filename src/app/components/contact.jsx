@@ -23,7 +23,7 @@ export default function Contact({l,darkMode}){
 
 
     return (
-        <section id="contact" className="flex flex-col wrap gap-y-4">
+        <section id="contact" className="flex flex-col wrap gap-y-4 items-center lg:items-start">
         {/* <h2 className="text-lg font-bold">{l.contact.title}</h2> */}
         <ul className="flex flex-wrap gap-x-6 gap-y-2">
           {l.contact.social.map(({ link, icon }, i) => {

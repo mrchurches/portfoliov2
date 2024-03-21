@@ -5,7 +5,7 @@ export default function Experience({l, darkMode}){
             <div className="flex flex-col gap-y-6 pt-4">
                 {l.experience.content.map((experience, index) => (
                     <article key={index} className="flex flex-col gap-y-2">
-                        <div className="flex justify-between items-center">
+                        <div className="flex flex-col sm:flex-row justify-between items-center">
                             <h3 className="font-semibold">{experience.company}</h3>
                             <h5 className="font-extralight text-sm italic">{experience.duration}</h5>
                         </div>
