@@ -26,10 +26,10 @@ export default function Contact({l,darkMode}){
         <section id="contact" className="flex flex-col wrap gap-y-4">
         {/* <h2 className="text-lg font-bold">{l.contact.title}</h2> */}
         <ul className="flex flex-wrap gap-x-6 gap-y-2">
-          {l.contact.social.map(({ link, icon }) => {
+          {l.contact.social.map(({ link, icon }, i) => {
             const Icon = socialIcons[icon];
             return (
-              <li className="flex gap-x-1 hover:text-slate-100">
+              <li className="flex gap-x-1 hover:text-slate-100" key={i}>
                 <a href={link} target="_blank">
                   {Icon && <Icon size="1.5em"/>}
                 </a>

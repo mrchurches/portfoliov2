@@ -43,10 +43,10 @@ export default function Skills({ l, darkMode }) {
     <section id="skills" className="flex flex-col wrap gap-y-4">
       <h2 className="text-xl"><strong>{l.skills.title}</strong></h2>
       <ul className="flex flex-wrap gap-x-6 gap-y-2 pt-4">
-        {l.skills.content.map(({ name, icon }) => {
+        {l.skills.content.map(({ name, icon }, i) => {
           const Icon = skillsIcons[name];
           return (
-            <li className="flex gap-x-1">
+            <li className="flex gap-x-1" key={i}>
               {Icon && <Icon />} <span>{name}</span>
             </li>
           );
