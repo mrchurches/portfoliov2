@@ -22,7 +22,7 @@ export default function Navbar({l, darkMode, setDarkMode, lang, setLang}) {
         };
     }, []);
   return (
-    <nav className={`transition navbar fixed flex gap-x-2 lg:gap-x-10 flex-wrap z-[1000] rounded-xl p-4 ${!darkMode&& 'text-slate-900'} items-center}`}>
+    <nav className={`transition navbar fixed flex gap-x-2 gap-y-4 lg:gap-x-10 flex-wrap z-[1000] rounded-xl p-4 ${!darkMode&& 'text-slate-900'} items-center justify-center text-xs md:text-lg }`}>
           {/* <a href="#about" className="hover:text-yellow-500">{l.nav.about}</a>
           <a href="#experience" className="hover:text-yellow-500">{l.nav.experience}</a>
           <a href="#projects" className="hover:text-yellow-500">{l.nav.projects}</a>
