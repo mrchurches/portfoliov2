@@ -62,26 +62,29 @@
             {"name":"Figma","icon":"FiFigma "}
         ]
     },
-    "projects": {
-        "title": "Projects",
-        "content": [
-            {
-                "title": "World-app",
-                "description": "I designed and developed a country information application, including search, filter, sort and create related activities. I used React, Redux and CSS for the frontend, and Node.js with Express on the backend, with a PostgreSQL database and Sequelize.\nThe main challenge was to apply my knowledge individually for the first time, which allowed me to consolidate my skills and demonstrate my ability to work autonomously on complex projects.",
-                "link": "https://github.com/mrchurches/PI-Countries-main",
-                "image": ["/world-app-1.png","/world-app-2.png","/world-app-3.png"],
-                "clickeable": true
-            },
-            {
-                "title": "Ecommerce-videogames",
-                "description": "On the backend, Node.js with Express was used, along with tools such as Auth0 and NodeMailer. The database was built in PostgreSQL and managed with Sequelize. On the other hand, the frontend used technologies such as React, Redux, Bootstrap, Cloudinary, MercadoPago Checkout and SweetAlerts. The project stood out for several key functionalities, such as authentication with Google and local registration, a guest mode with shopping cart, and a payment gateway integrated with Mercado Pago Checkout and PayPal in the React Native version of the application. In addition, an administration dashboard was implemented to manage users, bans, sales and comments, along with a mailing system. One of the main challenges for the team was the planning and organisation, including the selection of technologies and the distribution of tasks for the development of the application. My key contribution focused on the logical problem solving and organisation of the frontend, especially the implementation of the shopping cart and payment gateway.",
-                "link": "https://github.com/mrchurches/e-commerce_client",
-                "image": ["/ecommerce-1.png","/ecommerce-2.png","/ecommerce-3.png"],
-                "clickeable": true
-
-            }
-        ]
-    },
+        "projects": {
+            "title": "Projects",
+            "content": [
+                {
+                    "title": "World-app",
+                    "description": "CRUD with countries-API, displays basic stats and activities. Filtering, sorting, searching, and creation of new activities. Stack: PERN",
+                    "link": "https://github.com/mrchurches/PI-Countries-main",
+                    "image": ["/world-app-1.png","/world-app-2.png","/world-app-3.png"],
+                    "clickeable": true,
+                    "status": 1,
+                    "typeOfWork": "Individual Project"
+                },
+                {
+                    "title": "Ecommerce-videogames",
+                    "description": "Ecommerce with authentication, local/Google registration, guest mode, shopping cart, Mercado Pago Checkout/PayPal, admin dashboard for user management, bans, sales, and comments, along with mailing system. Stack: Node.js, Express, Auth0, NodeMailer, React, Redux, Bootstrap, Postgres",
+                    "link": "https://github.com/mrchurches/e-commerce_client",
+                    "image": ["/ecommerce-1.png","/ecommerce-2.png","/ecommerce-3.png"],
+                    "clickeable": true,
+                    "status": 2,
+                    "typeOfWork": "Group project(6 members)"
+                }
+            ]
+        },    
     "contact": {
         "title": "Contact",
         "social":[

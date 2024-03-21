@@ -8,7 +8,7 @@ export default function Navbar({l, darkMode, setDarkMode, lang, setLang}) {
             const navbar = document.querySelector(".navbar");
             const isScrolled = window.scrollY > 20;
         
-            navbar.classList.toggle("bg-slate-300", isScrolled);
+            navbar.classList.toggle("bg-slate-400", isScrolled);
             navbar.classList.toggle("bg-transparent", !isScrolled);
             navbar.classList.toggle("shadow-md", isScrolled);
             navbar.classList.toggle("text-slate-900", isScrolled);
@@ -22,7 +22,7 @@ export default function Navbar({l, darkMode, setDarkMode, lang, setLang}) {
         };
     }, []);
   return (
-    <nav className={`navbar fixed flex gap-x-2 lg:gap-x-6 flex-wrap z-[1000] rounded-xl p-2 ${!darkMode&& 'text-slate-900'} items-center}`}>
+    <nav className={`transition navbar fixed flex gap-x-2 lg:gap-x-6 flex-wrap z-[1000] rounded-xl p-4 ${!darkMode&& 'text-slate-900'} items-center}`}>
           <a href="#about" className="hover:text-yellow-500">{l.nav.about}</a>
           <a href="#experience" className="hover:text-yellow-500">{l.nav.experience}</a>
           <a href="#projects" className="hover:text-yellow-500">{l.nav.projects}</a>

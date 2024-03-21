@@ -67,18 +67,21 @@
         "content": [
             {
                 "title": "World-app",
-                "description": "Diseñé y desarrollé una aplicación de información sobre países, incluyendo funcionalidades de búsqueda, filtrado, ordenamiento y creación de actividades relacionadas. Utilicé React, Redux y CSS para el frontend, y Node.js con Express en el backend, con una base de datos PostgreSQL y Sequelize. El desafío principal fue aplicar por primera vez mis conocimientos de manera individual, lo que me permitió consolidar mis habilidades y demostrar mi capacidad para trabajar de forma autónoma en proyectos complejos.",
+                "description": "CRUD con API de países,muestra stats básicas y actividades.Filtrado, ordenamientos, búsqueda y creación de nuevas actividades. Stack PERN",
                 "link": "https://github.com/mrchurches/PI-Countries-main",
                 "image": ["/world-app-1.png","/world-app-2.png","/world-app-3.png"],
-                "clickeable": true
+                "clickeable": true,
+                "status": 1,
+                "typeOfWork": "Proyecto individual"
             },
             {
                 "title": "Ecommerce-videogames",
-                "description": "En el backend, se utilizó Node.js con Express, junto con herramientas como Auth0 y NodeMailer. La base de datos se construyó en PostgreSQL y se gestionó con Sequelize. Por otro lado, en el frontend se emplearon tecnologías como React, Redux, Bootstrap, Cloudinary, MercadoPago Checkout y SweetAlerts. El proyecto destacó por diversas funcionalidades clave, como la autenticación con Google y el registro local, un modo invitado con carrito de compras, y una pasarela de pagos integrada con Mercado Pago Checkout y PayPal en la versión de la aplicación para React Native. Además, se implementó un dashboard de administración para la gestión de usuarios, baneos, ventas y comentarios, junto con un sistema de mailing. Uno de los principales desafíos para el equipo fue la planificación y organización, incluida la selección de tecnologías y la distribución de tareas para el desarrollo de la aplicación. Mi contribución clave se centró en la resolución de problemas lógicos y la organización del frontend, especialmente en la implementación del carrito de compras y la pasarela de pagos",
+                "description": "Ecommerce con autenticación, registro local/con Google, guest mode, carrito de compras,  Mercado Pago Checkout/PayPal, dashboard de administración para gestión de usuarios, baneos, ventas y comentarios, junto con sistema de mailing. Stack: Node.js, Express, Auth0, NodeMailer, React, Redux, Bootstrap, Postgres",
                 "link": "https://github.com/mrchurches/e-commerce_client",
                 "image": ["/ecommerce-1.png","/ecommerce-2.png","/ecommerce-3.png"],
-                "clickeable": true
-
+                "clickeable": true,
+                "status": 2,
+                "typeOfWork": "Proyecto grupal(6 personas)"
             }
         ]
     },
