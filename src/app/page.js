@@ -15,11 +15,16 @@ import Carousel from "./components/carousel";
 import Link from "next/link";
 import { IconContext } from "react-icons";
 import Navbar from "./components/navbar";
+import About from "./components/about";
+import Skills from "./components/skills";
+import Experience from "./components/experience";
+import Education from "./components/education";
+import Contact from "./components/contact";
+import Projects from "./components/projects";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(true);
   const [lang, setLang] = useState("en");
-  const [selectedSkills, setSelectedSkills] = useState(0);
   const [selectedProject, setSelectedProject] = useState(0);
   const languageJson = {
     es: es,
@@ -44,15 +49,13 @@ export default function Home() {
     project = l.projects.content[selectedProject];
   }, [selectedProject]);
   useEffect(() => {
+    //get position of the scroll
+    let scroll = window.scrollY;
     darkMode
-      ? ((bg = "bg-gray-900"),
-        (textColor = "text-slate-300"),
-        (selectedButtonBg = "bg-gray-700"),
-        (buttonsBg = "bg-gray-800"))
-      : ((bg = "bg-white"),
-        (textColor = "text-slate-900"),
-        (selectedButtonBg = "bg-gray-800"),
-        (buttonsBg = "bg-slate-200"));
+      ? ((bg = "bg-gray-900"), (textColor = "text-slate-300"))
+      : //set color of the nav bg pending of the scroll position
+        // (scroll > 20 && document.querySelector(".navbar").classList.add("bg-slate-300 shadow-md text-slate-900"))
+        ((bg = "bg-white"), (textColor = "text-slate-900"));
     const root = document.documentElement;
     root.style.setProperty(
       "--scrollbar-track-color-dark",
@@ -66,142 +69,23 @@ export default function Home() {
 
   return (
     <div className={`flex justify-center pt-5 ${bg} ${textColor}`}>
-      <div className="flex w-10/12 lg:w-5/12 flex-col h-content gap-y-6">
-      <Navbar />
-        <div className="flex justify-between pt-10" id="about">
-          <div className="w-6/12 lg:w-8/12 pt-10">
-            {/* <h1 className="pb-5 font-bold text-3xl lg:text-5xl">Portfolio</h1> */}
-            <h2 className="pb-2 font-semibold text-xl lg:text-2xl">
-              {l.home.title}
-            </h2>
-            <p className="text-sm lg:text-xl">{l.home.subtitle}</p>
-          </div>
-          <div className="w-40 h-40 rounded-full overflow-hidden self-end mt-10">
-            <img
-              src="/personal-home.jpg"
-              alt="image of the owner of the porfolio"
-              className="w-full h-full object-cover"
-            />
-          </div>
-        </div>
-        <div className={`w-full h-[0.005rem] ${darkMode? 'bg-slate-300' : 'bg-slate-900'}`}></div>
-        <div className="" id="skills">
-          <div>
-            <h2 className="text-lg font-bold">{l.skills.title}</h2>
-            <div>
-              <ul className="flex gap-x-4 py-3 overflow-auto whitespace-nowrap">
-                {l.skills.categories.map((category, index) => (
-                  <li
-                    key={`${index}-${selectedSkills}`}
-                    id={`${index}-${selectedSkills}-`}
-                    className={`flex gap-x-1 p-2 items-center rounded-lg ${hoverButtonBg} hover:cursor-pointer  ${
-                      selectedSkills == index && selectedButtonBg
-                    }`}
-                    onClick={() => setSelectedSkills(index)}
-                  >
-                    {icon[index]}
-                    {category}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="">
-              <ul
-                className={`flex flex-wrap ${!darkMode && "text-slate-300"}`}
-                id=""
-              >
-                {l.skills.all[selectedSkills].map((stack, index) => (
-                  <li
-                    key={stack + selectedSkills + index}
-                    className={`${buttonsBg} ${textColor} ${hoverButtonBg} p-2 m-1 rounded-lg`}
-                  >
-                    {stack}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div className={`w-full h-[0.005rem] ${darkMode? 'bg-slate-300' : 'bg-slate-900'}`}></div>
-        <div className="" id="projects">
-          <h2 className="text-lg font-bold pb-3">{l.projects.title}</h2>
-          <div>
-            <div className={`flex gap-2 overflow-auto whitespace-nowrap `}>
-              {l.projects.content.map((p, i) => (
-                <h3
-                  key={p.title + i + selectedProject}
-                  className={`w-full break-keep text-md flex gap-x-1 p-2 items-center rounded-lg ${hoverButtonBg} justify-center hover:cursor-pointer ${textColor} ${
-                    selectedProject == i && selectedButtonBg
-                  } ${selectedProject == i && !darkMode && "text-slate-300"}`}
-                  onClick={() =>
-                    l.projects.content[i].clickeable == true &&
-                    setSelectedProject(i)
-                  }
-                >
-                  {p.title}
-                </h3>
-              ))}
-            </div>
-            <div
-              className={`my-3 p-4 rounded-lg ${
-                darkMode ? "bg-gray-800" : "bg-slate-300"
-              } p-2`}
-            >
-              <Carousel images={project.image} />
-              <p className="pt-4 px-5 font-light">{project.description}</p>
-              <Link href={project.link} target="_blank">
-                <div className="flex pt-2 pr-3 text-sky-600 gap-x-2 items-center w-full justify-end">
-                  Github <SiGithub />
-                </div>
-              </Link>
-            </div>
-          </div>
-        </div>
-        <div className={`w-full h-[0.005rem] ${darkMode? 'bg-slate-300' : 'bg-slate-900'}`}></div>
-        <div className="" id="contact">
-          <h2 className="text-lg font-bold">{l.contact.title}</h2>
-          <div className="flex justify-center gap-x-4 m-4">
-            <IconContext.Provider
-              value={{ size: "5em", className: "global-class-name" }}
-            >
-              <Link href={l.contact.github} target="_blank">
-                <SiGithub />
-              </Link>
-              <Link href={l.contact.linkedin} target="_blank">
-                <BsLinkedin />
-              </Link>
-              <Link href={l.contact.wsp} target="_blank">
-                <FaWhatsapp />
-              </Link>
-              <Link href={l.contact.cv} target="_blank">
-                <FaFileDownload />
-              </Link>
-            </IconContext.Provider>
-          </div>
-        </div>
-        <div className="flex flex-col fixed bottom-2 right-2 gap-y-2" id="sideBar">
-          <div
-            className="rounded-lg p-3 bg-gray-800"
-            onClick={() => setDarkMode(!darkMode)}
-          >
-            {darkMode ? (
-              <MdOutlineWbSunny />
-            ) : (
-              <FaRegMoon color="rgb(192,213,225)" />
-            )}
-          </div>
-          <div
-            className={`rounded-lg p-2 bg-gray-800 ${
-              !darkMode && "text-slate-300"
-            }`}
-            onClick={() => setLang(lang == "es" ? "en" : "es")}
-          >
-            {lang == "es" ? "EN" : "ES"}
-          </div>
-        </div>
-        <div id="footer">
+      <div className="flex w-10/12 lg:w-5/12 flex-col h-content gap-y-10">
+        <Navbar
+          l={l}
+          darkMode={darkMode}
+          setDarkMode={setDarkMode}
+          lang={lang}
+          setLang={setLang}
+        />
+        <About l={l} darkMode={darkMode} />
+        <Contact l={l} darkMode={darkMode} />
+        <Experience l={l} darkMode={darkMode} />
+        <Education l={l} darkMode={darkMode} />
+        <Skills l={l} darkMode={darkMode} />
+        <Projects l={l} darkMode={darkMode} />
+        <footer id="footer">
           <p className="text-xs text-center italic py-4">{l.footer.content}</p>
-        </div>
+        </footer>
       </div>
     </div>
   );

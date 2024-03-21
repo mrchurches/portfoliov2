@@ -18,7 +18,7 @@
 
 body {
   height: calc(100vh - 3.149rem);
-}
+  }
 
 .image-home{
   height: calc(100vh - 3.149rem);
@@ -123,4 +123,10 @@ body {
 
 .hidden {
   opacity: 0;
+}
+
+nav {
+  animation: nav-shadown 1s linear both;
+  animation-timeline: scroll();
+  animation-range: 0 100px;
 }
