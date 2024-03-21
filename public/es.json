@@ -4,13 +4,13 @@
         "from":"Buenos Aires, Argentina",
         "subtitle": "+1 año de experiencia en startups. Full Stack developer con sólidas habilidades Front-End. Capacidad para adaptarme en ambientes dinámicos, facilidad y eficacia para trabajar en equipo y predisposición al aprendizaje."
     },
-    "nav":{
-        "about": "Sobre mí",
-        "experience": "Experiencia",
-        "skills": "Habilidades",
-        "projects": "Proyectos",
-        "contact": "Contacto"
-    },
+    "nav":[
+        {"title": "Sobre mí","path":"/#about"},
+        {"title": "Experiencia","path":"/#experience"},
+        {"title": "Educación","path":"/#education"},
+        {"title": "Habilidades","path":"/#skills"},
+        {"title": "Proyectos","path":"/#projects"}
+    ],
     "experience":{
         "title":"Experiencia Laboral",
         "content":[

@@ -1,6 +1,6 @@
 export default function Education({l, darkMode}){
     return (
-        <section>
+        <section id="education">
             <h2 className="text-xl"><strong>{l.education.title}</strong></h2>
             <div className="flex flex-col gap-y-4 pt-4">
                 {l.education.content.map((education, index) => (
