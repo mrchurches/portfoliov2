@@ -10,11 +10,12 @@ export default function About({ l }) {
         <p className="font-light">{l.about.subtitle}</p>
         <h5 className="flex gap-x-1 text-sm items-center italic text-slate-400"><span><BiWorld /></span>{l.about.from}</h5>
       </div>
-      <div className="w-40 h-40 rounded-full overflow-hidden lg:self-end mt-10">
+      <div className="w-40 h-40 rounded-full overflow-hidden lg:self-end mt-10" id="container_about_image">
         <img
           src="/personal-home.jpg"
           alt="image of the owner of the porfolio"
           className="w-full h-full object-cover"
+          id="about_image"
         />
       </div>
     </div>

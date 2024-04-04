@@ -134,3 +134,21 @@ nav {
 html {
   scroll-behavior: smooth;
 }
+
+#container_about_image{
+  transition: transform 0.5s;
+}
+
+#container_about_image:hover {
+  transform: scale(1.1);
+  animation: rotacionInfinita 5s linear infinite;
+}
+
+@keyframes rotacionInfinita {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}

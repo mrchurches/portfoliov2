@@ -66,6 +66,15 @@
         "title": "Projectos",
         "content": [
             {
+                "title":"Typing Game",
+                "description":"Simply game with only Vanilla JS, to improve logical thinking and typing speed. Stack: HTML, CSS, JS",
+                "link":"https://typing-game-vanilla-js.vercel.app/",
+                "image":["/typing-game-1.png","/typing-game-2.png"],
+                "clickeable":true,
+                "status":1,
+                "typeOfWork":"Individual Project"
+            },
+            {
                 "title": "World-app",
                 "description": "CRUD con API de países,muestra stats básicas y actividades.Filtrado, ordenamientos, búsqueda y creación de nuevas actividades. Stack PERN",
                 "link": "https://github.com/mrchurches/PI-Countries-main",
