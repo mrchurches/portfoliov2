@@ -19,9 +19,9 @@
                 "company":"Calendico",
                 "duration":"Sep 2023 - Feb 2024 - 6 months [Software dev][SaaS]",
                 "tasks":[
-                    "Creé features que optimizaron la UX de la app utilizando Javascript y Ruby on Rails",
-                    "Realizé pruebas de regresión y QA",
-                    "Brindé soporte técnico a usuarios de la app, orienté sobre su uso y diagnostiqué bugs, dandole solución en el día o en futuros sprints dependiendo su criticidad"
+                    "I created features that optimised the UX of the app using Javascript and Ruby on Rails",
+                    "I performed regression testing and QA",
+                    "I provided technical support to users of the app, gave guidance on its use and diagnosed bugs, giving them solutions on the day or in future sprints depending on their criticality"
                 ]
             },
             {
@@ -29,16 +29,17 @@
                 "company":"Nular",
                 "duration":"Mar 2023 - Aug 2023 - 6 months [Software dev][Usability Tests]",
                 "tasks":[
-                    "Implementé el uso de una api que utiliza AI para transcribir audio a texto",
-                    "Creé un componente que realiza Drag and Drop de elementos de una manera muy especifica para tests de usabilidad",
-                    "En base a figma wireframes diagrame e implemente el creador de pruebas necesario para la app",
-                    "Optimizé el uso de la BD (Firestore) para un guardado de información constante reduciendo los costos"
+                    "I implemented the use of an api that uses AI to transcribe audio to text",
+                    "I created a component that performs drag and drop of elements in a very specific way for usability testing",
+                    "Based on figma wireframes, I diagrammed and implemented the necessary test builder for the app",
+                    "I optimised the use of the database (Firestore) for constant data storage and reduced costs"
+
                 ]
             }
         ]
     },
     "education":{
-        "title":"Educación",
+        "title":"Education",
         "content":[
             {"title":"Computer Engineering","institution":"Avellaneda University (UNDAV)","duration":"2023 - In progress"},
             {"title":"Full Stack PERN (+800hs)","institution":"Henry","duration":"2023"}

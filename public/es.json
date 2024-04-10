@@ -67,7 +67,7 @@
         "content": [
             {
                 "title":"Typing Game",
-                "description":"Simply game with only Vanilla JS, to improve logical thinking and typing speed. Stack: HTML, CSS, JS",
+                "description":"Sencillo juego con sólo Vanilla JS, para mejorar el pensamiento lógico y la velocidad de tecleo. Pila: HTML, CSS, JS",
                 "link":"https://typing-game-vanilla-js.vercel.app/",
                 "image":["/typing-game-1.png","/typing-game-2.png"],
                 "clickeable":true,
