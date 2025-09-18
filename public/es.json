@@ -1,110 +1,147 @@
 {
-    "about": {
-        "title": "Laureano Iglesias",
-        "from":"Buenos Aires, Argentina",
-        "subtitle": "+1 año de experiencia en startups. Full Stack developer con sólidas habilidades Front-End. Capacidad para adaptarme en ambientes dinámicos, facilidad y eficacia para trabajar en equipo y predisposición al aprendizaje."
-    },
-    "nav":[
-        {"title": "Sobre mí","path":"/#about"},
-        {"title": "Experiencia","path":"/#experience"},
-        {"title": "Educación","path":"/#education"},
-        {"title": "Habilidades","path":"/#skills"},
-        {"title": "Proyectos","path":"/#projects"}
-    ],
-    "experience":{
-        "title":"Experiencia Laboral",
-        "content":[
-            {
-                "title":"Full Stack developer",
-                "company":"Calendico",
-                "duration":"Sep 2023 - Feb 2024 - 6 months [Software dev][SaaS]",
-                "tasks":[
-                    "Creé features que optimizaron la UX de la app utilizando Javascript y Ruby on Rails",
-                    "Realizé pruebas de regresión y QA",
-                    "Brindé soporte técnico a usuarios de la app, orienté sobre su uso y diagnostiqué bugs, dandole solución en el día o en futuros sprints dependiendo su criticidad"
-                ]
-            },
-            {
-                "title":"Full Stack developer",
-                "company":"Nular",
-                "duration":"Mar 2023 - Aug 2023 - 6 months [Software dev][Usability Tests]",
-                "tasks":[
-                    "Implementé el uso de una api que utiliza AI para transcribir audio a texto",
-                    "Creé un componente que realiza Drag and Drop de elementos de una manera muy especifica para tests de usabilidad",
-                    "En base a figma wireframes diagrame e implemente el creador de pruebas necesario para la app",
-                    "Optimizé el uso de la BD (Firestore) para un guardado de información constante reduciendo los costos"
-                ]
-            }
+  "about": {
+    "title": "Laureano Iglesias",
+    "from": "Buenos Aires, Argentina",
+    "subtitle": "Desarrollador Full Stack con +2 años de experiencia en startups. Capacidad para adaptarme en ambientes dinámicos, facilidad y eficacia para trabajar en equipo y predisposición al aprendizaje."
+  },
+  "nav": [
+    { "title": "Sobre mí", "path": "/#about" },
+    { "title": "Experiencia", "path": "/#experience" },
+    { "title": "Educación", "path": "/#education" },
+    { "title": "Habilidades", "path": "/#skills" },
+    { "title": "Proyectos", "path": "/#projects" }
+  ],
+  "experience": {
+    "title": "Experiencia laboral",
+    "content": [
+      {
+        "title": "Desarrollador Full Stack",
+        "company": "Alkemy",
+        "duration": "mar 2024 - actualidad",
+        "tasks": [
+          "Implementación de procesos automatizados con IA para optimizar flujos internos.",
+          "Desarrollo de reportes avanzados en PDF con plantillas dinámicas y datos personalizados.",
+          "Mejora integral del frontend, incluyendo diseño responsive y optimización de UX/UI.",
+          "Stack: React, Vue, NestJS, MongoDB, MySQL, AWS."
         ]
-    },
-    "education":{
-        "title":"Educación",
-        "content":[
-            {"title":"Ingeniero en Informática","institution":"Universidad de Avellaneda (UNDAV)","duration":"2023 - En curso"},
-            {"title":"Full Stack PERN (+800hs)","institution":"Henry","duration":"2023"}
+      },
+      {
+        "title": "Desarrollador Full Stack",
+        "company": "Calendico",
+        "duration": "sep 2023 - feb 2024",
+        "tasks": [
+          "Desarrollo de funcionalidades para mejorar la experiencia de usuario en una plataforma SaaS de gestión de turnos vía WhatsApp.",
+          "QA y pruebas de regresión.",
+          "Soporte técnico y resolución de bugs críticos.",
+          "Stack: Ruby on Rails, Redis, PostgreSQL."
         ]
-    },
-    "skills":{
-        "title": "Habilidades",
-        "content":[
-            {"name":"HTML", "icon":"FaHtml5"},
-            {"name":"CSS","icon":"FaCss3Alt"},
-            {"name":"JavaScript","icon":"RiJavascriptFill "},
-            {"name":"React","icon":"FaReact"},
-            {"name":"Redux","icon":"SiRedux"},
-            {"name":"Node.js","icon":"FaNodeJs"},
-            {"name":"Express","icon":"SiExpress"},
-            {"name":"PostgreSQL","icon":"BiLogoPostgresql"},
-            {"name":"Sequelize","icon":"SiSequelize"},
-            {"name":"Ruby","icon":""},
-            {"name":"Ruby on Rails","icon":"SiRubyonrails"},
-            {"name":"Git","icon":"DiRuby"},
-            {"name":"Figma","icon":"FiFigma "}
+      },
+      {
+        "title": "Desarrollador Full Stack",
+        "company": "Nular",
+        "duration": "mar 2023 - ago 2023",
+        "tasks": [
+          "Integración de APIs de IA para transcripción de audio.",
+          "Desarrollo de un sistema de creación de pruebas de usabilidad basado en wireframes de Figma y componentes con drag & drop.",
+          "Optimización de Firestore para reducir costos por almacenamiento.",
+          "Stack: React, Express, Firebase, AWS."
         ]
-    },
-    "projects": {
-        "title": "Projectos",
-        "content": [
-            {
-                "title":"Typing Game",
-                "description":"Sencillo juego con sólo Vanilla JS, para mejorar el pensamiento lógico y la velocidad de tecleo. Pila: HTML, CSS, JS",
-                "link":"https://typing-game-vanilla-js.vercel.app/",
-                "image":["/typing-game-1.png","/typing-game-2.png"],
-                "clickeable":true,
-                "status":1,
-                "typeOfWork":"Individual Project"
-            },
-            {
-                "title": "World-app",
-                "description": "CRUD con API de países,muestra stats básicas y actividades.Filtrado, ordenamientos, búsqueda y creación de nuevas actividades. Stack PERN",
-                "link": "https://github.com/mrchurches/PI-Countries-main",
-                "image": ["/world-app-1.png","/world-app-2.png","/world-app-3.png"],
-                "clickeable": true,
-                "status": 1,
-                "typeOfWork": "Proyecto individual"
-            },
-            {
-                "title": "Ecommerce-videogames",
-                "description": "Ecommerce con autenticación, registro local/con Google, guest mode, carrito de compras,  Mercado Pago Checkout/PayPal, dashboard de administración para gestión de usuarios, baneos, ventas y comentarios, junto con sistema de mailing. Stack: Node.js, Express, Auth0, NodeMailer, React, Redux, Bootstrap, Postgres",
-                "link": "https://github.com/mrchurches/e-commerce_client",
-                "image": ["/ecommerce-1.png","/ecommerce-2.png","/ecommerce-3.png"],
-                "clickeable": true,
-                "status": 2,
-                "typeOfWork": "Proyecto grupal(6 personas)"
-            }
-        ]
-    },
-    "contact": {
-        "title": "Contacto",
-        "social":[
-            {"icon":"FaLinkedin","link":"https://www.linkedin.com/in/laureano-iglesias/"},
-            {"icon":"IoLogoGithub","link":"https://github.com/mrchurches"},
-            {"icon":"BiLogoGmail","link":"mailto:laureanoiglesias34@gmail.com"},
-            {"icon":"FaWhatsapp","link":"https://api.whatsapp.com/send/?phone=5401125120795&text=Hola%20me%20interesa%20tu%20perfil!"},
-            {"icon":"IoDocumentSharp","link":"https://docs.google.com/document/d/1GH7O1GYF3634YkAL4LiKTZPJcjdQaUoxNTGCOJoSVnU/edit?usp=sharing"}
-        ]
-    },
-    "footer": {
-        "content": "Todos los derechos reservados©. Laureano Iglesias 2024."
-    }
+      }
+    ]
+  },
+  "education": {
+    "title": "Educación",
+    "content": [
+      {
+        "title": "Ingeniería en Informática",
+        "institution": "UNDAV",
+        "duration": "2024 - (en curso)"
+      },
+      {
+        "title": "Full Stack PERN",
+        "institution": "Henry",
+        "duration": "2023",
+        "description": "Bootcamp (+800hs)"
+      }
+    ]
+  },
+  "skills": {
+    "title": "Habilidades",
+    "content": [
+      { "name": "JavaScript", "icon": "RiJavascriptFill" },
+      { "name": "TypeScript", "icon": "SiTypescript" },
+      { "name": "Ruby", "icon": "DiRuby" },
+      { "name": "HTML5", "icon": "FaHtml5" },
+      { "name": "CSS3", "icon": "FaCss3Alt" },
+      { "name": "React", "icon": "FaReact" },
+      { "name": "Vue.js", "icon": "FaVuejs" },
+      { "name": "Redux", "icon": "SiRedux" },
+      { "name": "Next.js", "icon": "SiNextdotjs" },
+      { "name": "Node.js", "icon": "FaNodeJs" },
+      { "name": "Express", "icon": "SiExpress" },
+      { "name": "Ruby on Rails", "icon": "SiRubyonrails" },
+      { "name": "NestJS", "icon": "SiNestjs" },
+      { "name": "PostgreSQL", "icon": "BiLogoPostgresql" },
+      { "name": "MongoDB", "icon": "SiMongodb" },
+      { "name": "MySQL", "icon": "SiMysql" },
+      { "name": "Redis", "icon": "SiRedis" },
+      { "name": "AWS", "icon": "FaAws" },
+      { "name": "Firebase", "icon": "SiFirebase" },
+      { "name": "Git", "icon": "FaGitAlt" }
+    ]
+  },
+  "projects": {
+    "title": "Proyectos",
+    "content": [
+      {
+        "title": "Typing Game",
+        "description": "Sencillo juego con sólo Vanilla JS, para mejorar el pensamiento lógico y la velocidad de tecleo. Stack: HTML, CSS, JS",
+        "link": "https://typing-game-vanilla-js.vercel.app/",
+        "image": ["/typing-game-1.png", "/typing-game-2.png"],
+        "clickeable": true,
+        "status": 1,
+        "typeOfWork": "Proyecto individual"
+      },
+      {
+        "title": "World-app",
+        "description": "CRUD con API de países, muestra estadísticas básicas y actividades. Filtrado, ordenamiento, búsqueda y creación de nuevas actividades. Stack: PERN",
+        "link": "https://github.com/mrchurches/PI-Countries-main",
+        "image": ["/world-app-1.png", "/world-app-2.png", "/world-app-3.png"],
+        "clickeable": true,
+        "status": 1,
+        "typeOfWork": "Proyecto individual"
+      },
+      {
+        "title": "Ecommerce-videogames",
+        "description": "Ecommerce con autenticación, registro local/Google, modo invitado, carrito de compras, Mercado Pago Checkout/PayPal, panel de administración para gestión de usuarios, baneos, ventas y comentarios, junto con sistema de mailing. Stack: Node.js, Express, Auth0, NodeMailer, React, Redux, Bootstrap, Postgres",
+        "link": "https://github.com/mrchurches/e-commerce_client",
+        "image": ["/ecommerce-1.png", "/ecommerce-2.png", "/ecommerce-3.png"],
+        "clickeable": true,
+        "status": 2,
+        "typeOfWork": "Proyecto grupal (6 personas)"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contacto",
+    "social": [
+      {
+        "icon": "FaLinkedin",
+        "link": "https://www.linkedin.com/in/laureano-iglesias/"
+      },
+      { "icon": "IoLogoGithub", "link": "https://github.com/mrchurches" },
+      { "icon": "BiLogoGmail", "link": "mailto:laureanoiglesias34@gmail.com" },
+      {
+        "icon": "FaWhatsapp",
+        "link": "https://api.whatsapp.com/send/?phone=5401125120795&text=Hola%20me%20interesa%20tu%20perfil!"
+      },
+      {
+        "icon": "IoDocumentSharp",
+        "link": "https://docs.google.com/document/d/1GH7O1GYF3634YkAL4LiKTZPJcjdQaUoxNTGCOJoSVnU/edit?usp=sharing"
+      }
+    ]
+  },
+  "footer": {
+    "content": "Todos los derechos reservados ©. Laureano Iglesias"
+  }
 }

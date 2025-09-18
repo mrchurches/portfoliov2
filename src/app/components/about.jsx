@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { BiWorld } from "react-icons/bi";
 
 export default function About({ l }) {
@@ -10,12 +11,14 @@ export default function About({ l }) {
         <p className="font-light">{l.about.subtitle}</p>
         <h5 className="flex gap-x-1 text-sm items-center italic text-slate-400"><span><BiWorld /></span>{l.about.from}</h5>
       </div>
-      <div className="w-40 h-40 rounded-full overflow-hidden lg:self-end mt-10" id="container_about_image">
-        <img
+      <div className="relative w-40 h-40 rounded-full overflow-hidden lg:self-end mt-10" id="container_about_image">
+        <Image
           src="/personal-home.jpg"
-          alt="image of the owner of the porfolio"
-          className="w-full h-full object-cover"
-          id="about_image"
+          alt="Laureano Iglesias - Full Stack Developer"
+          fill
+          className="object-cover"
+          sizes="160px"
+          priority
         />
       </div>
     </div>

@@ -18,25 +18,14 @@
 
 body {
   height: calc(100vh - 3.149rem);
-  }
+}
 
-.image-home{
+.image-home {
   height: calc(100vh - 3.149rem);
 }
 
-#subtitle-home{
-  background-color: #D0BCA8;
-}
-
-.embla {
-  overflow: hidden;
-}
-.embla__container {
-  display: flex;
-}
-.embla__slide {
-  flex: 0 0 100%;
-  min-width: 0;
+#subtitle-home {
+  background-color: #d0bca8;
 }
 
 @layer utilities {
@@ -58,16 +47,20 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--scrollbar-track-color-dark); /* Usamos la variable para el color de fondo */
+  background: var(
+    --scrollbar-track-color-dark
+  ); /* Usamos la variable para el color de fondo */
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--scrollbar-thumb-color-dark); /* Usamos la variable para el color del indicador */
+  background: var(
+    --scrollbar-thumb-color-dark
+  ); /* Usamos la variable para el color del indicador */
   border-radius: 5px; /* Radio de borde del indicador de la barra de desplazamiento */
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: darken(var(--scrollbar-thumb-color-dark), 10%); /* Cambiamos el color al pasar el cursor */
+  background: #162038; /* Color fijo más oscuro al pasar el cursor */
 }
 
 .carousel {
@@ -135,7 +128,7 @@ html {
   scroll-behavior: smooth;
 }
 
-#container_about_image{
+#container_about_image {
   transition: transform 0.5s;
 }
 
