@@ -8,9 +8,9 @@
   },
   "nav": [
     { "title": "Sobre mí", "path": "/#about" },
+    { "title": "Contacto", "path": "/#contact", "primary": true },
     { "title": "Experiencia", "path": "/#experience" },
-    { "title": "Proyectos", "path": "/#projects" },
-    { "title": "Contacto", "path": "/#contact", "primary": true }
+    { "title": "Proyectos", "path": "/#projects" }
   ],
   "experience": {
     "title": "Experiencia laboral",

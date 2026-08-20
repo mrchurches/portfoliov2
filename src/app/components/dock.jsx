@@ -13,12 +13,9 @@ import { otherLocale } from "../dictionaries";
  * backdrop-filter becomes a backdrop root, so a frost layer wrapping a lens
  * layer would clip the lens to the frost's own output.
  *
- * The indicator is a single element that slides and stretches between items
- * instead of each item painting its own hover background. That is what makes
- * the movement read as one piece of glass travelling along the bar. It does
- * not carry a backdrop-filter of its own: stacking glass on glass is exactly
- * what Apple's own guidance warns against, and it would refract the frost
- * layer's output rather than the page.
+ * The order of l.nav has to mirror the order of the sections in the page. If
+ * it does not, the scroll spy walks backwards through the dock while the
+ * reader is scrolling steadily forwards.
  */
 export default function Dock({ l, lang }) {
   const { trackEvent } = useAnalytics();
@@ -26,6 +23,13 @@ export default function Dock({ l, lang }) {
 
   const listRef = useRef(null);
   const itemRefs = useRef([]);
+  const previousLeft = useRef(null);
+  // While an anchor click is smooth-scrolling, every section between here and
+  // the destination crosses the spy band. Without this the indicator stops at
+  // each one on the way past.
+  const navigatingTo = useRef(null);
+  const navTimeout = useRef(null);
+
   const [active, setActive] = useState(0);
   const [hovered, setHovered] = useState(null);
   const [indicator, setIndicator] = useState(null);
@@ -35,7 +39,16 @@ export default function Dock({ l, lang }) {
   const measure = useCallback(() => {
     const el = itemRefs.current[shown];
     if (!el) return;
-    setIndicator({ left: el.offsetLeft, width: el.offsetWidth });
+
+    const left = el.offsetLeft;
+    const previous = previousLeft.current;
+    // The two edges are given different delays so the trailing one lags: the
+    // pill stretches across the gap and contracts once it arrives, instead of
+    // sliding rigidly and appearing to land on each item it passes.
+    const dir = previous === null || left === previous ? "none" : left > previous ? "right" : "left";
+    previousLeft.current = left;
+
+    setIndicator({ left, width: el.offsetWidth, dir });
   }, [shown]);
 
   useLayoutEffect(() => {
@@ -51,8 +64,10 @@ export default function Dock({ l, lang }) {
     return () => ro.disconnect();
   }, [measure]);
 
+  useEffect(() => () => clearTimeout(navTimeout.current), []);
+
   // Scroll spy. The margins collapse the viewport to a thin band across the
-  // middle, so the section crossing that band is the one you are reading.
+  // middle, so the section crossing that band is the one being read.
   useEffect(() => {
     const sections = l.nav
       .map((item, index) => {
@@ -66,10 +81,21 @@ export default function Dock({ l, lang }) {
 
     const observer = new IntersectionObserver(
       (entries) => {
-        const visible = entries.filter((entry) => entry.isIntersecting);
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
         if (!visible.length) return;
+
         const match = sections.find((section) => section.node === visible[0].target);
-        if (match) setActive(match.index);
+        if (!match) return;
+
+        if (navigatingTo.current !== null) {
+          // Ignore everything in transit; release once the destination lands.
+          if (match.index === navigatingTo.current) navigatingTo.current = null;
+          return;
+        }
+
+        setActive(match.index);
       },
       { rootMargin: "-45% 0px -45% 0px", threshold: 0 }
     );
@@ -77,6 +103,19 @@ export default function Dock({ l, lang }) {
     sections.forEach(({ node }) => observer.observe(node));
     return () => observer.disconnect();
   }, [l]);
+
+  const handleNavClick = (item, index) => {
+    navigatingTo.current = index;
+    clearTimeout(navTimeout.current);
+    // Safety net: if the destination never crosses the band, because it is the
+    // last section and too short to reach the middle, release anyway.
+    navTimeout.current = setTimeout(() => {
+      navigatingTo.current = null;
+    }, 1400);
+
+    setActive(index);
+    trackEvent("navigation_click", { section: item.title, path: item.path });
+  };
 
   return (
     <nav aria-label={l.a11y.mainNav} className="dock">
@@ -91,10 +130,8 @@ export default function Dock({ l, lang }) {
           <span
             aria-hidden="true"
             className="dock__indicator"
-            style={{
-              transform: `translateX(${indicator.left}px)`,
-              width: `${indicator.width}px`,
-            }}
+            data-dir={indicator.dir}
+            style={{ left: `${indicator.left}px`, width: `${indicator.width}px` }}
           />
         )}
 
@@ -109,10 +146,7 @@ export default function Dock({ l, lang }) {
               onMouseEnter={() => setHovered(index)}
               onFocus={() => setHovered(index)}
               onBlur={() => setHovered(null)}
-              onClick={() => {
-                setActive(index);
-                trackEvent("navigation_click", { section: item.title, path: item.path });
-              }}
+              onClick={() => handleNavClick(item, index)}
               className={`dock__link focus-ring ${item.primary ? "dock__link--primary" : ""} ${
                 active === index ? "is-active" : ""
               }`}

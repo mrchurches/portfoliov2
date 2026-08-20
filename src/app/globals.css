@@ -128,11 +128,28 @@
       inset 0 -1px 0 rgba(255, 255, 255, 0.14),
       inset 0 0 12px rgba(255, 255, 255, 0.1),
       0 2px 10px rgba(0, 0, 0, 0.28);
-    /* Overshoots a little and settles, which is what reads as liquid rather
-       than as a box being moved. */
+    /* The two edges travel on the same curve but not at the same time. The
+       leading edge leaves immediately and the trailing one lags, so the pill
+       stretches across the gap and contracts once it arrives. Animating both
+       edges together instead makes it slide rigidly and appear to land on
+       every item it passes. */
     transition:
-      transform 0.46s cubic-bezier(0.34, 1.42, 0.52, 1),
-      width 0.46s cubic-bezier(0.34, 1.42, 0.52, 1);
+      left 0.44s cubic-bezier(0.32, 1.28, 0.5, 1),
+      width 0.44s cubic-bezier(0.32, 1.28, 0.5, 1);
+  }
+
+  /* Moving right: width grows first so the right edge runs ahead, then left
+     catches up. Moving left: left goes first and width trails it. */
+  .dock__indicator[data-dir="right"] {
+    transition-delay: 0.09s, 0s;
+  }
+
+  .dock__indicator[data-dir="left"] {
+    transition-delay: 0s, 0.09s;
+  }
+
+  .dock__indicator[data-dir="none"] {
+    transition-delay: 0s, 0s;
   }
 
   .dock__link {
