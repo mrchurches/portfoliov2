@@ -8,15 +8,19 @@ export default function Card({ project }) {
   const { trackEvent } = useGTM();
 
   const extractTechStack = (description) => {
-    const stackMatch = description.match(/Stack:\s*(.+?)(?:\.|$)/);
+    const stackMatch = description.match(/Stack:\s*(.+?)(?:\.$|$)/);
     if (stackMatch) {
-      return stackMatch[1].split(',').map(tech => tech.trim());
+      return stackMatch[1]
+        .split(',')
+        .map(tech => tech.trim());
     }
     return [];
   };
 
   const techStack = extractTechStack(project.description);
-  const isGitHub = project.link.includes('github.com');
+  const hasLink = project.clickeable === true && typeof project.link === 'string' && project.link.length > 0;
+  const hasImage = Array.isArray(project.image) && project.image.length > 0;
+  const isGitHub = hasLink && project.link.includes('github.com');
 
   const handleProjectClick = () => {
     trackEvent("project_click", {
@@ -30,16 +34,18 @@ export default function Card({ project }) {
   return (
     <article className="w-full lg:w-2/5 flex flex-col gap-y-3 hover:bg-slate-800 rounded-xl p-4 transition hover:shadow-lg">
       <div className="flex gap-x-3">
-        <div className="relative w-20 h-20 flex-shrink-0">
-          <Image
-            src={project.image[0]}
-            alt={project.title}
-            fill
-            className="rounded-xl object-cover"
-            sizes="80px"
-            loading="lazy"
-          />
-        </div>
+        {hasImage && (
+          <div className="relative w-20 h-20 flex-shrink-0">
+            <Image
+              src={project.image[0]}
+              alt={project.title}
+              fill
+              className="rounded-xl object-cover"
+              sizes="80px"
+              loading="lazy"
+            />
+          </div>
+        )}
         <div className="flex-1">
           <h3 className="flex items-center gap-x-2 text-lg font-bold">
             {project.title}
@@ -50,22 +56,24 @@ export default function Card({ project }) {
               </span>
             </span>
           </h3>
-          <a
-            href={project.link}
-            target="_blank"
-            onClick={handleProjectClick}
-            className="flex items-center gap-x-1 text-slate-500 hover:text-slate-300 text-xs truncate transition"
-          >
-            <span>
-              {isGitHub ? <FaGithub /> : <FaExternalLinkAlt />}
-            </span>
-            {isGitHub ? 'Ver en GitHub' : 'Ver Demo'}
-          </a>
+          {hasLink && (
+            <a
+              href={project.link}
+              target="_blank"
+              onClick={handleProjectClick}
+              className="flex items-center gap-x-1 text-slate-500 hover:text-slate-300 text-xs truncate transition"
+            >
+              <span>
+                {isGitHub ? <FaGithub /> : <FaExternalLinkAlt />}
+              </span>
+              {isGitHub ? 'Ver en GitHub' : 'Ver Demo'}
+            </a>
+          )}
         </div>
       </div>
 
       <p className="text-slate-300 text-sm font-normal line-clamp-3">
-        {project.description.replace(/Stack:.*/, '').trim()}
+        {project.description.replace(/\s*Stack:\s*.+$/, '').trim()}
       </p>
 
       {techStack.length > 0 && (

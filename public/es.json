@@ -1,8 +1,8 @@
 {
   "about": {
-    "title": "Laureano Iglesias",
+    "title": "Laureano Damian Iglesias",
     "from": "Buenos Aires, Argentina",
-    "subtitle": "Desarrollador Full Stack con +2 años de experiencia en startups. Capacidad para adaptarme en ambientes dinámicos, facilidad y eficacia para trabajar en equipo y predisposición al aprendizaje."
+    "subtitle": "Desarrollador Full Stack con más de 3 años de experiencia en startups. Capacidad para adaptarme en ambientes dinámicos, facilidad y eficacia para trabajar en equipo y predisposición al aprendizaje."
   },
   "nav": [
     { "title": "Sobre mí", "path": "/#about" },
@@ -26,7 +26,7 @@
         ]
       },
       {
-        "title": "Desarrollador Full Stack",
+        "title": "Desarrollador Full Stack Jr.",
         "company": "Calendico",
         "duration": "sep 2023 - feb 2024",
         "tasks": [
@@ -37,7 +37,7 @@
         ]
       },
       {
-        "title": "Desarrollador Full Stack",
+        "title": "Desarrollador Full Stack Jr.",
         "company": "Nular",
         "duration": "mar 2023 - ago 2023",
         "tasks": [
@@ -53,9 +53,14 @@
     "title": "Educación",
     "content": [
       {
+        "title": "Tecnicatura Universitaria en Informática",
+        "institution": "UNNE",
+        "duration": "En curso"
+      },
+      {
         "title": "Ingeniería en Informática",
         "institution": "UNDAV",
-        "duration": "2024 - (en curso)"
+        "duration": "2024 - en curso"
       },
       {
         "title": "Full Stack PERN",
@@ -67,27 +72,43 @@
   },
   "skills": {
     "title": "Habilidades",
+    "categories": {
+      "programmingLanguages": "Lenguajes de Programación",
+      "frameworksAndLibraries": "Frameworks y Librerías",
+      "cloudAndDevOps": "Cloud y DevOps",
+      "databases": "Bases de Datos",
+      "versionControlAndTools": "Herramientas y Control de Versiones",
+      "methodologies": "Metodologías de Trabajo",
+      "spokenLanguages": "Idiomas"
+    },
     "content": [
-      { "name": "JavaScript", "icon": "RiJavascriptFill" },
-      { "name": "TypeScript", "icon": "SiTypescript" },
-      { "name": "Ruby", "icon": "DiRuby" },
-      { "name": "HTML5", "icon": "FaHtml5" },
-      { "name": "CSS3", "icon": "FaCss3Alt" },
-      { "name": "React", "icon": "FaReact" },
-      { "name": "Vue.js", "icon": "FaVuejs" },
-      { "name": "Redux", "icon": "SiRedux" },
-      { "name": "Next.js", "icon": "SiNextdotjs" },
-      { "name": "Node.js", "icon": "FaNodeJs" },
-      { "name": "Express", "icon": "SiExpress" },
-      { "name": "Ruby on Rails", "icon": "SiRubyonrails" },
-      { "name": "NestJS", "icon": "SiNestjs" },
-      { "name": "PostgreSQL", "icon": "BiLogoPostgresql" },
-      { "name": "MongoDB", "icon": "SiMongodb" },
-      { "name": "MySQL", "icon": "SiMysql" },
-      { "name": "Redis", "icon": "SiRedis" },
-      { "name": "AWS", "icon": "FaAws" },
-      { "name": "Firebase", "icon": "SiFirebase" },
-      { "name": "Git", "icon": "FaGitAlt" }
+      { "name": "JavaScript (ES6+)", "icon": "RiJavascriptFill", "category": "programmingLanguages" },
+      { "name": "TypeScript", "icon": "SiTypescript", "category": "programmingLanguages" },
+      { "name": "Ruby", "icon": "DiRuby", "category": "programmingLanguages" },
+      { "name": "HTML5", "icon": "FaHtml5", "category": "programmingLanguages" },
+      { "name": "CSS3", "icon": "FaCss3Alt", "category": "programmingLanguages" },
+      { "name": "React", "icon": "FaReact", "category": "frameworksAndLibraries" },
+      { "name": "Vue.js", "icon": "FaVuejs", "category": "frameworksAndLibraries" },
+      { "name": "Redux", "icon": "SiRedux", "category": "frameworksAndLibraries" },
+      { "name": "Next.js", "icon": "SiNextdotjs", "category": "frameworksAndLibraries" },
+      { "name": "Node.js", "icon": "FaNodeJs", "category": "frameworksAndLibraries" },
+      { "name": "Express", "icon": "SiExpress", "category": "frameworksAndLibraries" },
+      { "name": "Ruby on Rails", "icon": "SiRubyonrails", "category": "frameworksAndLibraries" },
+      { "name": "PostgreSQL", "icon": "BiLogoPostgresql", "category": "databases" },
+      { "name": "MariaDB", "category": "databases" },
+      { "name": "MongoDB", "icon": "SiMongodb", "category": "databases" },
+      { "name": "Firestore", "category": "databases" },
+      { "name": "Redis", "icon": "SiRedis", "category": "databases" },
+      { "name": "AWS (S3, Lambda, etc.)", "icon": "FaAws", "category": "cloudAndDevOps" },
+      { "name": "Firebase (Auth, Hosting)", "icon": "SiFirebase", "category": "cloudAndDevOps" },
+      { "name": "Git", "icon": "FaGitAlt", "category": "versionControlAndTools" },
+      { "name": "Bitbucket", "category": "versionControlAndTools" },
+      { "name": "Scrum", "category": "methodologies" },
+      { "name": "Kanban", "category": "methodologies" },
+      { "name": "Basecamp Shape Up", "category": "methodologies" }
+    ],
+    "spokenLanguages": [
+      { "name": "Inglés", "level": "B2" }
     ]
   },
   "projects": {
@@ -96,29 +117,67 @@
       {
         "title": "Typing Game",
         "description": "Sencillo juego con sólo Vanilla JS, para mejorar el pensamiento lógico y la velocidad de tecleo. Stack: HTML, CSS, JS",
-        "link": "https://typing-game-vanilla-js.vercel.app/",
         "image": ["/typing-game-1.png", "/typing-game-2.png"],
-        "clickeable": true,
+        "clickeable": false,
         "status": 1,
         "typeOfWork": "Proyecto individual"
       },
       {
         "title": "World-app",
         "description": "CRUD con API de países, muestra estadísticas básicas y actividades. Filtrado, ordenamiento, búsqueda y creación de nuevas actividades. Stack: PERN",
-        "link": "https://github.com/mrchurches/PI-Countries-main",
         "image": ["/world-app-1.png", "/world-app-2.png", "/world-app-3.png"],
-        "clickeable": true,
+        "clickeable": false,
         "status": 1,
         "typeOfWork": "Proyecto individual"
       },
       {
         "title": "Ecommerce-videogames",
         "description": "Ecommerce con autenticación, registro local/Google, modo invitado, carrito de compras, Mercado Pago Checkout/PayPal, panel de administración para gestión de usuarios, baneos, ventas y comentarios, junto con sistema de mailing. Stack: Node.js, Express, Auth0, NodeMailer, React, Redux, Bootstrap, Postgres",
-        "link": "https://github.com/mrchurches/e-commerce_client",
         "image": ["/ecommerce-1.png", "/ecommerce-2.png", "/ecommerce-3.png"],
-        "clickeable": true,
+        "clickeable": false,
         "status": 2,
         "typeOfWork": "Proyecto grupal (6 personas)"
+      },
+      {
+        "title": "Incident City",
+        "description": "Simulador determinista para un jugador de incidentes de sistemas distribuidos, con tormentas de reintentos, crecimiento de colas, dead letters, recuperación y una línea de tiempo determinista con HUD accesible y replay. Stack: TypeScript, Vite, HTML.",
+        "image": [],
+        "clickeable": false,
+        "status": 1,
+        "typeOfWork": "Proyecto individual"
+      },
+      {
+        "title": "Personal Context OS",
+        "description": "Espacio de trabajo local-first para indexar documentos y repositorios seleccionados. Calcula hashes de las fuentes, detecta cambios, mantiene el contenido de las fuentes fuera del índice y define límites antes de la recuperación, generación y mantenimiento autónomo. Stack: JavaScript, Node.js, npm.",
+        "image": [],
+        "clickeable": false,
+        "status": 1,
+        "typeOfWork": "Proyecto individual"
+      },
+      {
+        "title": "Restaurant Landing",
+        "description": "Landing page premium de smash burgers enfocada en conversión, con modal y validación de reservas, diseño responsive, animaciones de scroll y navegación con glassmorphism. Stack: TypeScript, Next.js, React, Tailwind CSS, Framer Motion.",
+        "link": "https://restaurant-landing-fawn.vercel.app/",
+        "image": [],
+        "clickeable": true,
+        "status": 1,
+        "typeOfWork": "Proyecto individual"
+      },
+      {
+        "title": "Auction",
+        "description": "Contrato de subasta en Solidity con incrementos mínimos de puja, extensiones de tiempo, reembolsos, eventos y despliegue verificado en Sepolia. Stack: Solidity, Ethereum, Sepolia.",
+        "image": [],
+        "clickeable": false,
+        "status": 2,
+        "typeOfWork": "Proyecto individual"
+      },
+      {
+        "title": "SimpleSwap",
+        "description": "AMM/DEX simplificado inspirado en Uniswap V2, con pools de liquidez, tokens LP, swaps, precios basados en producto constante y un oráculo de precios on-chain. Stack: Solidity, Ethereum, AMM.",
+        "image": [],
+        "clickeable": false,
+        "status": 2,
+        "typeOfWork": "Proyecto individual"
       }
     ]
   },
@@ -129,12 +188,7 @@
         "icon": "FaLinkedin",
         "link": "https://www.linkedin.com/in/laureano-iglesias/"
       },
-      { "icon": "IoLogoGithub", "link": "https://github.com/mrchurches" },
       { "icon": "BiLogoGmail", "link": "mailto:laureanoiglesias34@gmail.com" },
-      {
-        "icon": "FaWhatsapp",
-        "link": "https://api.whatsapp.com/send/?phone=5401125120795&text=Hola%20me%20interesa%20tu%20perfil!"
-      },
       {
         "icon": "IoDocumentSharp",
         "link": "https://docs.google.com/document/d/1GH7O1GYF3634YkAL4LiKTZPJcjdQaUoxNTGCOJoSVnU/edit?usp=sharing"
@@ -142,6 +196,6 @@
     ]
   },
   "footer": {
-    "content": "Todos los derechos reservados ©. Laureano Iglesias"
+    "content": "Todos los derechos reservados ©. Laureano Damian Iglesias"
   }
 }

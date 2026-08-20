@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { BiLogoGmail } from "react-icons/bi";
-import { FaFileDownload, FaLinkedin, FaWhatsapp } from "react-icons/fa";
-import { SiGithub } from "react-icons/si";
+import { FaFileDownload, FaLinkedin } from "react-icons/fa";
 import useGTM from "../hooks/useGTM";
 
 export default function Contact({l,darkMode}){
@@ -10,18 +9,14 @@ export default function Contact({l,darkMode}){
 
     const socialIcons = {
         FaLinkedin: FaLinkedin,
-        IoLogoGithub: SiGithub,
         BiLogoGmail: BiLogoGmail,
-        FaWhatsapp: FaWhatsapp,
         IoDocumentSharp: FaFileDownload,
     };
 
     const getContactType = (icon) => {
         const types = {
             FaLinkedin: "LinkedIn",
-            IoLogoGithub: "GitHub",
             BiLogoGmail: "Email",
-            FaWhatsapp: "WhatsApp",
             IoDocumentSharp: "CV"
         };
         return types[icon] || icon;

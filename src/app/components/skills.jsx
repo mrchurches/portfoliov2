@@ -13,9 +13,7 @@ import {
   SiRubyonrails,
   SiTypescript,
   SiNextdotjs,
-  SiNestjs,
   SiMongodb,
-  SiMysql,
   SiRedis,
   SiFirebase,
 } from "react-icons/si";
@@ -23,25 +21,9 @@ import { RiJavascriptFill } from "react-icons/ri";
 import { BiLogoPostgresql } from "react-icons/bi";
 import { DiRuby } from "react-icons/di";
 
-// "skills":[
-//     {"name":"HTML", "icon":"FaHtml5"},
-//     {"name":"CSS","icon":"FaCss3Alt"},
-//     {"name":"JavaScript","icon":"RiJavascriptFill "},
-//     {"name":"React","icon":"FaReact"},
-//     {"name":"Redux","icon":"SiRedux"},
-//     {"name":"Node.js","icon":"FaNodeJs"},
-//     {"name":"Express","icon":"SiExpress"},
-//     {"name":"PostgreSQL","icon":"BiLogoPostgresql"},
-//     {"name":"Sequelize","icon":"SiSequelize"},
-//     {"name":"Ruby","icon":""},
-//     {"name":"Ruby on Rails","icon":"SiRubyonrails"},
-//     {"name":"Git","icon":"DiRuby"},
-//     {"name":"Figma","icon":"FiFigma "}
-// ],
-
 export default function Skills({ l, darkMode }) {
   const skillsIcons = {
-    JavaScript: RiJavascriptFill,
+    "JavaScript (ES6+)": RiJavascriptFill,
     TypeScript: SiTypescript,
     Ruby: DiRuby,
     HTML5: FaHtml5,
@@ -53,37 +35,21 @@ export default function Skills({ l, darkMode }) {
     "Node.js": FaNodeJs,
     Express: SiExpress,
     "Ruby on Rails": SiRubyonrails,
-    NestJS: SiNestjs,
     PostgreSQL: BiLogoPostgresql,
+    "AWS (S3, Lambda, etc.)": FaAws,
+    "Firebase (Auth, Hosting)": SiFirebase,
     MongoDB: SiMongodb,
-    MySQL: SiMysql,
     Redis: SiRedis,
-    AWS: FaAws,
-    Firebase: SiFirebase,
     Git: FaGitAlt,
   };
 
-  const categorizeSkills = (skills) => {
-    const categories = {
-      "Languages": ["JavaScript", "TypeScript", "Ruby", "HTML5", "CSS3"],
-      "Frontend": ["React", "Vue.js", "Redux", "Next.js"],
-      "Backend": ["Node.js", "Express", "Ruby on Rails", "NestJS"],
-      "Database": ["PostgreSQL", "MongoDB", "MySQL", "Redis"],
-      "Cloud & Tools": ["AWS", "Firebase", "Git"]
-    };
-
-    const categorized = {};
-
-    Object.entries(categories).forEach(([category, categorySkills]) => {
-      categorized[category] = skills.filter(skill =>
-        categorySkills.includes(skill.name)
-      );
-    });
-
-    return categorized;
-  };
-
-  const categorizedSkills = categorizeSkills(l.skills.content);
+  const categorizedSkills = Object.entries(l.skills.categories)
+    .filter(([category]) => category !== "spokenLanguages")
+    .map(([category, label]) => ({
+      category,
+      label,
+      skills: l.skills.content.filter(skill => skill.category === category),
+    }));
 
   return (
     <section id="skills" className="flex flex-col wrap gap-y-4">
@@ -92,19 +58,19 @@ export default function Skills({ l, darkMode }) {
       </h2>
 
       <div className="space-y-4 pt-4">
-        {Object.entries(categorizedSkills).map(([category, skills]) => (
+        {categorizedSkills.map(({ category, label, skills }) => (
           skills.length > 0 && (
             <div key={category} className="space-y-2">
               <h3 className="text-sm font-semibold text-slate-400 uppercase tracking-wider">
-                {category}
+                {label}
               </h3>
               <ul className="flex flex-wrap gap-x-4 gap-y-2">
-                {skills.map(({ name }, i) => {
+                {skills.map(({ name }) => {
                   const Icon = skillsIcons[name];
                   return (
                     <li
                       className="flex items-center gap-x-1 px-3 py-1 rounded-full bg-slate-800 hover:bg-slate-700 transition"
-                      key={`${category}-${i}`}
+                      key={`${category}-${name}`}
                     >
                       {Icon && <Icon className="text-lg" />}
                       <span className="text-sm">{name}</span>
@@ -115,6 +81,24 @@ export default function Skills({ l, darkMode }) {
             </div>
           )
         ))}
+
+        {l.skills.spokenLanguages.length > 0 && (
+          <div className="space-y-2">
+            <h3 className="text-sm font-semibold text-slate-400 uppercase tracking-wider">
+              {l.skills.categories.spokenLanguages}
+            </h3>
+            <ul className="flex flex-wrap gap-x-4 gap-y-2">
+              {l.skills.spokenLanguages.map(({ name, level }) => (
+                <li
+                  className="flex items-center gap-x-1 px-3 py-1 rounded-full bg-slate-800 hover:bg-slate-700 transition"
+                  key={name}
+                >
+                  <span className="text-sm">{name} {level}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
     </section>
   );
