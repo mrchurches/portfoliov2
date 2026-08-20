@@ -121,66 +121,145 @@
     "content": [
       {
         "title": "Typing Game",
-        "description": "Simple game using only Vanilla JS, to improve logical thinking and typing speed. Stack: HTML, CSS, JS",
-        "image": ["/typing-game-1.png", "/typing-game-2.png"],
-        "clickeable": false,
+        "description": "Simple game using only Vanilla JS, to improve logical thinking and typing speed.",
+        "stack": [
+          "HTML",
+          "CSS",
+          "JS"
+        ],
+        "links": {
+          "demo": null,
+          "repo": "https://github.com/mrchurches/typing-game"
+        },
+        "image": [
+          "/typing-game-1.png",
+          "/typing-game-2.png"
+        ],
         "status": 1,
         "typeOfWork": "Individual Project"
       },
       {
         "title": "World-app",
-        "description": "CRUD with countries API, displays basic stats and activities. Filtering, sorting, searching, and creation of new activities. Stack: PERN",
-        "image": ["/world-app-1.png", "/world-app-2.png", "/world-app-3.png"],
-        "clickeable": false,
+        "description": "CRUD with countries API, displays basic stats and activities. Filtering, sorting, searching, and creation of new activities.",
+        "stack": [
+          "PERN"
+        ],
+        "links": {
+          "demo": null,
+          "repo": "https://github.com/mrchurches/PI-Countries-main"
+        },
+        "image": [
+          "/world-app-1.png",
+          "/world-app-2.png",
+          "/world-app-3.png"
+        ],
         "status": 1,
         "typeOfWork": "Individual Project"
       },
       {
         "title": "Ecommerce-videogames",
-        "description": "Ecommerce with authentication, local/Google registration, guest mode, shopping cart, Mercado Pago Checkout/PayPal, admin dashboard for user management, bans, sales, and comments, along with a mailing system. Stack: Node.js, Express, Auth0, NodeMailer, React, Redux, Bootstrap, Postgres",
-        "image": ["/ecommerce-1.png", "/ecommerce-2.png", "/ecommerce-3.png"],
-        "clickeable": false,
+        "description": "Ecommerce with authentication, local/Google registration, guest mode, shopping cart, Mercado Pago Checkout/PayPal, admin dashboard for user management, bans, sales, and comments, along with a mailing system.",
+        "stack": [
+          "Node.js",
+          "Express",
+          "Auth0",
+          "NodeMailer",
+          "React",
+          "Redux",
+          "Bootstrap",
+          "Postgres"
+        ],
+        "links": {
+          "demo": "https://e-commerce-videogames.vercel.app",
+          "repo": "https://github.com/mrchurches/e-commerce_client"
+        },
+        "image": [
+          "/ecommerce-1.png",
+          "/ecommerce-2.png",
+          "/ecommerce-3.png"
+        ],
         "status": 2,
         "typeOfWork": "Group project (6 members)"
       },
       {
         "title": "Incident City",
-        "description": "Deterministic single-player distributed-systems incident simulator covering retry storms, queue growth, dead letters, recovery, and a deterministic timeline with an accessible HUD and replay. Stack: TypeScript, Vite, HTML.",
+        "description": "Deterministic single-player distributed-systems incident simulator covering retry storms, queue growth, dead letters, recovery, and a deterministic timeline with an accessible HUD and replay.",
+        "stack": [
+          "TypeScript",
+          "Vite",
+          "HTML"
+        ],
+        "links": {
+          "demo": null,
+          "repo": "https://github.com/mrchurches/incident-city"
+        },
         "image": [],
-        "clickeable": false,
         "status": 1,
         "typeOfWork": "Individual Project"
       },
       {
         "title": "Personal Context OS",
-        "description": "Local-first workspace for indexing selected documents and repositories. It hashes sources, detects changes, keeps source contents out of the index, and defines boundaries before retrieval, generation, and autonomous maintenance. Stack: JavaScript, Node.js, npm.",
+        "description": "Local-first workspace for indexing selected documents and repositories. It hashes sources, detects changes, keeps source contents out of the index, and defines boundaries before retrieval, generation, and autonomous maintenance.",
+        "stack": [
+          "JavaScript",
+          "Node.js",
+          "npm"
+        ],
+        "links": {
+          "demo": null,
+          "repo": "https://github.com/mrchurches/personal-context-os"
+        },
         "image": [],
-        "clickeable": false,
         "status": 1,
         "typeOfWork": "Individual Project"
       },
       {
         "title": "Restaurant Landing",
-        "description": "Conversion-focused premium smash-burger landing page with reservation modal and validation, responsive layout, scroll animations, and glassmorphism navigation. Stack: TypeScript, Next.js, React, Tailwind CSS, Framer Motion.",
-        "link": "https://restaurant-landing-fawn.vercel.app/",
+        "description": "Conversion-focused premium smash-burger landing page with reservation modal and validation, responsive layout, scroll animations, and glassmorphism navigation.",
+        "stack": [
+          "TypeScript",
+          "Next.js",
+          "React",
+          "Tailwind CSS",
+          "Framer Motion"
+        ],
+        "links": {
+          "demo": "https://restaurant-landing-fawn.vercel.app",
+          "repo": "https://github.com/mrchurches/restaurant-landing"
+        },
         "image": [],
-        "clickeable": true,
         "status": 1,
         "typeOfWork": "Individual Project"
       },
       {
         "title": "Auction",
-        "description": "Solidity auction contract with minimum bid increments, time extensions, refunds, events, and a verified Sepolia deployment. Stack: Solidity, Ethereum, Sepolia.",
+        "description": "Solidity auction contract with minimum bid increments, time extensions, refunds, events, and a verified Sepolia deployment.",
+        "stack": [
+          "Solidity",
+          "Ethereum",
+          "Sepolia"
+        ],
+        "links": {
+          "demo": null,
+          "repo": "https://github.com/mrchurches/Auction"
+        },
         "image": [],
-        "clickeable": false,
         "status": 2,
         "typeOfWork": "Individual Project"
       },
       {
         "title": "SimpleSwap",
-        "description": "Simplified Uniswap V2-inspired AMM/DEX with liquidity pools, LP tokens, swaps, constant-product pricing, and an on-chain price oracle. Stack: Solidity, Ethereum, AMM.",
+        "description": "Simplified Uniswap V2-inspired AMM/DEX with liquidity pools, LP tokens, swaps, constant-product pricing, and an on-chain price oracle.",
+        "stack": [
+          "Solidity",
+          "Ethereum",
+          "AMM"
+        ],
+        "links": {
+          "demo": null,
+          "repo": "https://github.com/mrchurches/SimpleSwap"
+        },
         "image": [],
-        "clickeable": false,
         "status": 2,
         "typeOfWork": "Individual Project"
       }

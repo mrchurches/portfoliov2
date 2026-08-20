@@ -121,66 +121,145 @@
     "content": [
       {
         "title": "Typing Game",
-        "description": "Sencillo juego con sólo Vanilla JS, para mejorar el pensamiento lógico y la velocidad de tecleo. Stack: HTML, CSS, JS",
-        "image": ["/typing-game-1.png", "/typing-game-2.png"],
-        "clickeable": false,
+        "description": "Sencillo juego con sólo Vanilla JS, para mejorar el pensamiento lógico y la velocidad de tecleo.",
+        "stack": [
+          "HTML",
+          "CSS",
+          "JS"
+        ],
+        "links": {
+          "demo": null,
+          "repo": "https://github.com/mrchurches/typing-game"
+        },
+        "image": [
+          "/typing-game-1.png",
+          "/typing-game-2.png"
+        ],
         "status": 1,
         "typeOfWork": "Proyecto individual"
       },
       {
         "title": "World-app",
-        "description": "CRUD con API de países, muestra estadísticas básicas y actividades. Filtrado, ordenamiento, búsqueda y creación de nuevas actividades. Stack: PERN",
-        "image": ["/world-app-1.png", "/world-app-2.png", "/world-app-3.png"],
-        "clickeable": false,
+        "description": "CRUD con API de países, muestra estadísticas básicas y actividades. Filtrado, ordenamiento, búsqueda y creación de nuevas actividades.",
+        "stack": [
+          "PERN"
+        ],
+        "links": {
+          "demo": null,
+          "repo": "https://github.com/mrchurches/PI-Countries-main"
+        },
+        "image": [
+          "/world-app-1.png",
+          "/world-app-2.png",
+          "/world-app-3.png"
+        ],
         "status": 1,
         "typeOfWork": "Proyecto individual"
       },
       {
         "title": "Ecommerce-videogames",
-        "description": "Ecommerce con autenticación, registro local/Google, modo invitado, carrito de compras, Mercado Pago Checkout/PayPal, panel de administración para gestión de usuarios, baneos, ventas y comentarios, junto con sistema de mailing. Stack: Node.js, Express, Auth0, NodeMailer, React, Redux, Bootstrap, Postgres",
-        "image": ["/ecommerce-1.png", "/ecommerce-2.png", "/ecommerce-3.png"],
-        "clickeable": false,
+        "description": "Ecommerce con autenticación, registro local/Google, modo invitado, carrito de compras, Mercado Pago Checkout/PayPal, panel de administración para gestión de usuarios, baneos, ventas y comentarios, junto con sistema de mailing.",
+        "stack": [
+          "Node.js",
+          "Express",
+          "Auth0",
+          "NodeMailer",
+          "React",
+          "Redux",
+          "Bootstrap",
+          "Postgres"
+        ],
+        "links": {
+          "demo": "https://e-commerce-videogames.vercel.app",
+          "repo": "https://github.com/mrchurches/e-commerce_client"
+        },
+        "image": [
+          "/ecommerce-1.png",
+          "/ecommerce-2.png",
+          "/ecommerce-3.png"
+        ],
         "status": 2,
         "typeOfWork": "Proyecto grupal (6 personas)"
       },
       {
         "title": "Incident City",
-        "description": "Simulador determinista para un jugador de incidentes de sistemas distribuidos, con tormentas de reintentos, crecimiento de colas, dead letters, recuperación y una línea de tiempo determinista con HUD accesible y replay. Stack: TypeScript, Vite, HTML.",
+        "description": "Simulador determinista para un jugador de incidentes de sistemas distribuidos, con tormentas de reintentos, crecimiento de colas, dead letters, recuperación y una línea de tiempo determinista con HUD accesible y replay.",
+        "stack": [
+          "TypeScript",
+          "Vite",
+          "HTML"
+        ],
+        "links": {
+          "demo": null,
+          "repo": "https://github.com/mrchurches/incident-city"
+        },
         "image": [],
-        "clickeable": false,
         "status": 1,
         "typeOfWork": "Proyecto individual"
       },
       {
         "title": "Personal Context OS",
-        "description": "Espacio de trabajo local-first para indexar documentos y repositorios seleccionados. Calcula hashes de las fuentes, detecta cambios, mantiene el contenido de las fuentes fuera del índice y define límites antes de la recuperación, generación y mantenimiento autónomo. Stack: JavaScript, Node.js, npm.",
+        "description": "Espacio de trabajo local-first para indexar documentos y repositorios seleccionados. Calcula hashes de las fuentes, detecta cambios, mantiene el contenido de las fuentes fuera del índice y define límites antes de la recuperación, generación y mantenimiento autónomo.",
+        "stack": [
+          "JavaScript",
+          "Node.js",
+          "npm"
+        ],
+        "links": {
+          "demo": null,
+          "repo": "https://github.com/mrchurches/personal-context-os"
+        },
         "image": [],
-        "clickeable": false,
         "status": 1,
         "typeOfWork": "Proyecto individual"
       },
       {
         "title": "Restaurant Landing",
-        "description": "Landing page premium de smash burgers enfocada en conversión, con modal y validación de reservas, diseño responsive, animaciones de scroll y navegación con glassmorphism. Stack: TypeScript, Next.js, React, Tailwind CSS, Framer Motion.",
-        "link": "https://restaurant-landing-fawn.vercel.app/",
+        "description": "Landing page premium de smash burgers enfocada en conversión, con modal y validación de reservas, diseño responsive, animaciones de scroll y navegación con glassmorphism.",
+        "stack": [
+          "TypeScript",
+          "Next.js",
+          "React",
+          "Tailwind CSS",
+          "Framer Motion"
+        ],
+        "links": {
+          "demo": "https://restaurant-landing-fawn.vercel.app",
+          "repo": "https://github.com/mrchurches/restaurant-landing"
+        },
         "image": [],
-        "clickeable": true,
         "status": 1,
         "typeOfWork": "Proyecto individual"
       },
       {
         "title": "Auction",
-        "description": "Contrato de subasta en Solidity con incrementos mínimos de puja, extensiones de tiempo, reembolsos, eventos y despliegue verificado en Sepolia. Stack: Solidity, Ethereum, Sepolia.",
+        "description": "Contrato de subasta en Solidity con incrementos mínimos de puja, extensiones de tiempo, reembolsos, eventos y despliegue verificado en Sepolia.",
+        "stack": [
+          "Solidity",
+          "Ethereum",
+          "Sepolia"
+        ],
+        "links": {
+          "demo": null,
+          "repo": "https://github.com/mrchurches/Auction"
+        },
         "image": [],
-        "clickeable": false,
         "status": 2,
         "typeOfWork": "Proyecto individual"
       },
       {
         "title": "SimpleSwap",
-        "description": "AMM/DEX simplificado inspirado en Uniswap V2, con pools de liquidez, tokens LP, swaps, precios basados en producto constante y un oráculo de precios on-chain. Stack: Solidity, Ethereum, AMM.",
+        "description": "AMM/DEX simplificado inspirado en Uniswap V2, con pools de liquidez, tokens LP, swaps, precios basados en producto constante y un oráculo de precios on-chain.",
+        "stack": [
+          "Solidity",
+          "Ethereum",
+          "AMM"
+        ],
+        "links": {
+          "demo": null,
+          "repo": "https://github.com/mrchurches/SimpleSwap"
+        },
         "image": [],
-        "clickeable": false,
         "status": 2,
         "typeOfWork": "Proyecto individual"
       }
