@@ -9,8 +9,8 @@ export default function About({ l }) {
           {l.about.title}
         </h1>
         <p className="text-lg font-medium pb-1">{l.about.role}</p>
-        <p className="font-light">{l.about.subtitle}</p>
-        <p className="flex flex-wrap gap-x-2 gap-y-1 text-sm items-center italic text-slate-400">
+        <p className="font-light max-w-prose">{l.about.subtitle}</p>
+        <p className="flex flex-wrap gap-x-2 gap-y-1 text-sm items-center italic text-fg-muted">
           <span className="flex gap-x-1 items-center"><BiWorld aria-hidden="true" />{l.about.from}</span>
           <span aria-hidden="true">·</span>
           <span>{l.about.status}</span>

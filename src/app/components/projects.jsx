@@ -4,7 +4,7 @@ import Link from "next/link";
 import { SiGithub } from "react-icons/si";
 import Card from "./card";
 
-export default function Projects({l,darkMode}){
+export default function Projects({l}){
     const [selectedProject, setSelectedProject] = useState(0);
     let project = l.projects.content[selectedProject];
     return (

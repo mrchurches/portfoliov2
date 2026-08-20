@@ -44,10 +44,10 @@ body {
 }
 
 :root {
-  --scrollbar-track-color-dark: #2e4169; /* Color de fondo de la barra de desplazamiento en modo oscuro */
-  --scrollbar-thumb-color-dark: #1c273f; /* Color del indicador de la barra de desplazamiento en modo oscuro */
-  --scrollbar-track-color-light: #f1f1f1; /* Color de fondo de la barra de desplazamiento en modo claro */
-  --scrollbar-thumb-color-light: #888; /* Color del indicador de la barra de desplazamiento en modo claro */
+  /* The site commits to a single dark theme, so these are static.
+     They used to be rewritten from JS on every darkMode change. */
+  --scrollbar-track-color-dark: #2e4169;
+  --scrollbar-thumb-color-dark: #1c273f;
 }
 
 /* Estilos para la barra de desplazamiento en Google Chrome */

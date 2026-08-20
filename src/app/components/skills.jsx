@@ -21,7 +21,7 @@ import { RiJavascriptFill } from "react-icons/ri";
 import { BiLogoPostgresql } from "react-icons/bi";
 import { DiRuby } from "react-icons/di";
 
-export default function Skills({ l, darkMode }) {
+export default function Skills({ l }) {
   const skillsIcons = {
     "JavaScript (ES6+)": RiJavascriptFill,
     TypeScript: SiTypescript,
@@ -52,7 +52,7 @@ export default function Skills({ l, darkMode }) {
     }));
 
   return (
-    <section id="skills" className="flex flex-col wrap gap-y-4">
+    <section id="skills" className="flex flex-col gap-y-4">
       <h2 className="text-xl">
         <strong>{l.skills.title}</strong>
       </h2>
@@ -61,7 +61,7 @@ export default function Skills({ l, darkMode }) {
         {categorizedSkills.map(({ category, label, skills }) => (
           skills.length > 0 && (
             <div key={category} className="space-y-2">
-              <h3 className="text-sm font-semibold text-slate-400 uppercase tracking-wider">
+              <h3 className="text-sm font-semibold text-fg-muted uppercase tracking-wider">
                 {label}
               </h3>
               <ul className="flex flex-wrap gap-x-4 gap-y-2">
@@ -69,7 +69,7 @@ export default function Skills({ l, darkMode }) {
                   const Icon = skillsIcons[name];
                   return (
                     <li
-                      className="flex items-center gap-x-1 px-3 py-1 rounded-full bg-slate-800 hover:bg-slate-700 transition"
+                      className="flex items-center gap-x-1 px-3 py-1 rounded-full bg-surface-raised hover:bg-surface-chip transition"
                       key={`${category}-${name}`}
                     >
                       {Icon && <Icon className="text-lg" />}
@@ -84,13 +84,13 @@ export default function Skills({ l, darkMode }) {
 
         {l.skills.spokenLanguages.length > 0 && (
           <div className="space-y-2">
-            <h3 className="text-sm font-semibold text-slate-400 uppercase tracking-wider">
+            <h3 className="text-sm font-semibold text-fg-muted uppercase tracking-wider">
               {l.skills.categories.spokenLanguages}
             </h3>
             <ul className="flex flex-wrap gap-x-4 gap-y-2">
               {l.skills.spokenLanguages.map(({ name, level }) => (
                 <li
-                  className="flex items-center gap-x-1 px-3 py-1 rounded-full bg-slate-800 hover:bg-slate-700 transition"
+                  className="flex items-center gap-x-1 px-3 py-1 rounded-full bg-surface-raised hover:bg-surface-chip transition"
                   key={name}
                 >
                   <span className="text-sm">{name} {level}</span>

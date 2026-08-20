@@ -11,7 +11,6 @@ Personal portfolio built with Next.js 14 and Tailwind CSS.
 
 ## Features
 
-- Dark/Light mode (persisted in localStorage)
 - Multi-language support (EN/ES)
 - Google Tag Manager integration
 - Responsive design

@@ -20,10 +20,10 @@ export default function Card({ project, l }) {
   };
 
   const linkClass =
-    "focus-ring flex items-center gap-x-1 text-slate-400 hover:text-slate-200 text-xs transition";
+    "focus-ring flex items-center gap-x-1 text-fg-muted hover:text-fg-strong text-xs transition";
 
   return (
-    <article className="w-full lg:w-2/5 flex flex-col gap-y-3 hover:bg-slate-800 rounded-xl p-4 transition hover:shadow-lg">
+    <article className="w-full lg:w-2/5 flex flex-col gap-y-3 rounded-xl p-4 border border-transparent transition hover:bg-surface-raised hover:border-surface-chip hover:shadow-lg">
       <div className="flex gap-x-3">
         {hasImage && (
           <div className="relative w-20 h-20 flex-shrink-0">
@@ -68,7 +68,7 @@ export default function Card({ project, l }) {
         </div>
       </div>
 
-      <p className="text-slate-300 text-sm font-normal line-clamp-3">
+      <p className="text-fg text-sm font-normal line-clamp-3">
         {project.description}
       </p>
 
@@ -77,7 +77,7 @@ export default function Card({ project, l }) {
           {stack.map((tech) => (
             <li
               key={tech}
-              className="text-xs px-2 py-1 bg-slate-700 rounded-full text-slate-300"
+              className="text-xs px-2 py-1 bg-surface-chip rounded-full text-fg"
             >
               {tech}
             </li>
@@ -85,7 +85,7 @@ export default function Card({ project, l }) {
         </ul>
       )}
 
-      <p className="flex text-xs italic self-end text-slate-400">{project.typeOfWork}</p>
+      <p className="flex text-xs italic self-end text-fg-muted">{project.typeOfWork}</p>
     </article>
   );
 }

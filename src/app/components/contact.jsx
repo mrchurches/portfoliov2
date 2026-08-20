@@ -20,7 +20,7 @@ const contactTypes = {
   IoDocumentSharp: "CV",
 };
 
-export default function Contact({ l, darkMode }) {
+export default function Contact({ l }) {
   const { trackEvent } = useGTM();
   const [showCopied, setShowCopied] = useState(false);
 
@@ -70,7 +70,7 @@ export default function Contact({ l, darkMode }) {
                 target={isEmail ? undefined : "_blank"}
                 rel={isEmail ? undefined : "noopener noreferrer"}
                 onClick={() => handleContactClick(link, icon)}
-                className="focus-ring flex items-center gap-x-1.5 text-sm hover:text-slate-100"
+                className="focus-ring flex items-center gap-x-1.5 text-sm hover:text-fg-strong"
               >
                 {Icon && <Icon size="1.25em" aria-hidden="true" />}
                 <span>{label}</span>
@@ -81,7 +81,7 @@ export default function Contact({ l, darkMode }) {
                   type="button"
                   onClick={() => handleCopyEmail(link)}
                   aria-label={l.contact.copyLabel}
-                  className="focus-ring p-1 text-slate-400 hover:text-slate-100"
+                  className="focus-ring p-1 text-fg-muted hover:text-fg-strong"
                 >
                   <MdContentCopy size="1em" aria-hidden="true" />
                 </button>
@@ -98,9 +98,7 @@ export default function Contact({ l, darkMode }) {
       {showCopied && (
         <div
           aria-hidden="true"
-          className={`absolute -top-8 left-1/2 transform -translate-x-1/2 px-2 py-1 rounded text-xs ${
-            darkMode ? "bg-green-600 text-white" : "bg-green-500 text-white"
-          } transition-opacity duration-200`}
+          className="absolute -top-8 left-1/2 transform -translate-x-1/2 px-2 py-1 rounded text-xs bg-green-600 text-white transition-opacity duration-200"
         >
           {l.contact.copiedLabel}
         </div>
