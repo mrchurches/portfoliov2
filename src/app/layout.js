@@ -31,22 +31,13 @@ export const metadata = {
     title: "Laureano Iglesias - Full Stack Developer",
     description: "Portfolio - Alkemy, Calendico, Nular. React, Vue, Next.js, NestJS, Node, Ruby on Rails.",
     siteName: "Laureano Iglesias Portfolio",
-    images: [
-      {
-        // Real dimensions of the file. Declaring 1200x630 over a 960x562 image
-        // makes scrapers fall back or crop. A purpose-built card is still pending.
-        url: "/personal-home.jpg",
-        width: 960,
-        height: 562,
-        alt: "Laureano Iglesias - Full Stack Developer",
-      },
-    ],
+    // Images come from the opengraph-image route, which renders a real
+    // 1200x630 card. Declaring them here would override that convention.
   },
   twitter: {
     card: "summary_large_image",
     title: "Laureano Iglesias | Full Stack Developer",
     description: "Full Stack Developer with 3+ years shipping production software at startups. Buenos Aires, Argentina.",
-    images: ["/personal-home.jpg"],
   },
   robots: {
     index: true,
