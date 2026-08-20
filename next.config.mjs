@@ -14,6 +14,11 @@ const securityHeaders = [
 ];
 
 const nextConfig = {
+  // Verification builds write somewhere else so they can never collide with a
+  // dev server holding .next. Mixing the two leaves a production
+  // webpack-runtime pointing at vendor chunks dev never emits.
+  distDir: process.env.NEXT_DIST_DIR || ".next",
+
   async headers() {
     return [{ source: "/:path*", headers: securityHeaders }];
   },
