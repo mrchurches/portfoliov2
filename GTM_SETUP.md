@@ -6,11 +6,31 @@
 3. Copia tu GTM ID (formato: GTM-XXXXXXX)
 
 ## 2. Configurar en el proyecto
-1. Abre el archivo `.env.local`
-2. Reemplaza `GTM-XXXXXXX` con tu ID real:
+
+### 2a. Desarrollo local
+1. Copiá `.env.example` a `.env.local`
+2. Poné tu ID real de contenedor:
    ```
    NEXT_PUBLIC_GTM_ID=GTM-TU_ID_AQUI
    ```
+
+Tiene que ser un ID de **contenedor de GTM** (`GTM-...`), no un Measurement
+ID de GA4 (`G-...`). El measurement ID va adentro de GTM, en el tag de
+configuración del paso 3, no en esta variable.
+
+### 2b. Producción — este paso es obligatorio
+La variable se inlinea **en tiempo de build**, así que definirla solo en
+local no hace nada en producción.
+
+1. Vercel → Project Settings → Environment Variables
+2. `NEXT_PUBLIC_GTM_ID` con el mismo valor, en Production, Preview y Development
+3. Redeploy
+
+Para verificar que quedó prendido:
+```
+curl -s https://portfolio-laureano.vercel.app | grep -c googletagmanager
+```
+Tiene que devolver 1 o más. Si devuelve 0, la variable no llegó al build.
 
 ## 3. Configurar Google Analytics 4 en GTM
 
@@ -94,16 +114,22 @@ Para cada parámetro de evento, crear una variable:
 3. Deberías ver los eventos en tiempo real
 
 ## Eventos que trackea tu portfolio:
-- **contact_click**: Cuando alguien hace click en LinkedIn, GitHub, Email, WhatsApp o CV
-- **project_click**: Cuando alguien hace click en un proyecto
-- **language_change**: Cuando cambian el idioma
-- **navigation_click**: Cuando navegan por las secciones
+- **contact_click**: Click en LinkedIn, GitHub, Email o CV
+- **contact_copy**: Click en el botón de copiar el email
+- **project_click**: Click en un proyecto, con `project_link_type` en `demo` o `repo`
+- **language_change**: Cambio de idioma
+- **navigation_click**: Navegación entre secciones
 - **Pageviews**: Automático con GA4 Configuration
 
 ## Métricas útiles en GA4:
-- Qué proyectos generan más interés
+- Qué proyectos generan más interés, y si miran el demo o el código
 - Qué links de contacto usan más
-- Tiempo en cada sección
 - Dispositivos y ubicaciones de visitantes
 - Tasa de rebote
-- Flujo de comportamiento
+
+### Lo que esta configuración NO puede darte
+El sitio es una sola ruta con navegación por anclas (`/#about`, `/#experience`),
+así que el tag de configuración con trigger "All Pages" produce **un solo
+pageview por sesión**. Tiempo por sección y flujo de comportamiento no salen
+de acá: harían falta eventos de `scroll_depth` o `section_view` que este
+setup no define.
