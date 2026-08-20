@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { notFound } from "next/navigation";
 import { getDictionary, isLocale, locales } from "../dictionaries";
+import GlassFilter from "../components/glass-filter";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -72,6 +73,7 @@ export default function RootLayout({ children, params }) {
   return (
     <html lang={lang}>
       <body className={inter.className} suppressHydrationWarning={true}>
+        <GlassFilter />
         {children}
         <Analytics />
         <SpeedInsights />

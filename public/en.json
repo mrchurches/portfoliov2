@@ -8,11 +8,9 @@
   },
   "nav": [
     { "title": "About", "path": "/#about" },
-    { "title": "Contact", "path": "/#contact" },
     { "title": "Experience", "path": "/#experience" },
-    { "title": "Education", "path": "/#education" },
-    { "title": "Skills", "path": "/#skills" },
-    { "title": "Projects", "path": "/#projects" }
+    { "title": "Projects", "path": "/#projects" },
+    { "title": "Contact", "path": "/#contact", "primary": true }
   ],
   "experience": {
     "title": "Experience",

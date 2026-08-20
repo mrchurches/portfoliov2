@@ -1,4 +1,4 @@
-import Navbar from "../components/navbar";
+import Dock from "../components/dock";
 import About from "../components/about";
 import Skills from "../components/skills";
 import Experience from "../components/experience";
@@ -14,9 +14,8 @@ export default function Home({ params }) {
   const l = getDictionary(lang);
 
   return (
-    <div className="flex justify-center pt-5 bg-surface text-fg">
+    <div className="flex justify-center pt-5 text-fg">
       <div className="flex w-10/12 lg:w-5/12 flex-col h-content gap-y-10">
-        <Navbar l={l} lang={lang} />
         <main className="flex flex-col gap-y-10">
           <About l={l} />
           <Contact l={l} />
@@ -25,6 +24,8 @@ export default function Home({ params }) {
           <Skills l={l} />
           <Projects l={l} />
         </main>
+        <Dock l={l} lang={lang} />
+
         <footer id="footer">
           <p className="text-xs text-center italic py-4">
             {l.footer.content} {new Date().getFullYear()}.
