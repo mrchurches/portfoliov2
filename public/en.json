@@ -183,7 +183,7 @@
       },
       {
         "title": "Incident City",
-        "description": "Deterministic single-player distributed-systems incident simulator covering retry storms, queue growth, dead letters, recovery, and a deterministic timeline with an accessible HUD and replay.",
+        "description": "Single-player incident simulator for distributed systems. Covers retry storms, queue growth, dead letters and recovery, with a replayable deterministic timeline and an accessible HUD.",
         "stack": [
           "TypeScript",
           "Vite",

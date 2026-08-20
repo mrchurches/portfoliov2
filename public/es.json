@@ -183,7 +183,7 @@
       },
       {
         "title": "Incident City",
-        "description": "Simulador determinista para un jugador de incidentes de sistemas distribuidos, con tormentas de reintentos, crecimiento de colas, dead letters, recuperación y una línea de tiempo determinista con HUD accesible y replay.",
+        "description": "Simulador de incidentes en sistemas distribuidos, para un jugador. Cubre tormentas de reintentos, crecimiento de colas, dead letters y recuperación, con una línea de tiempo determinista reproducible y HUD accesible.",
         "stack": [
           "TypeScript",
           "Vite",
