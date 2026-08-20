@@ -1,8 +1,10 @@
 {
   "about": {
     "title": "Laureano Damian Iglesias",
-    "from": "Buenos Aires, Argentina",
-    "subtitle": "Full Stack developer with 3+ years of experience in startups. Ability to adapt in dynamic environments, ease and efficiency in teamwork, and willingness to learn."
+    "role": "Full Stack Developer",
+    "from": "Buenos Aires, Argentina (GMT-3)",
+    "status": "English B2",
+    "subtitle": "3+ years shipping production software at startups. Today at Alkemy, building AI-driven internal automation and dynamic PDF reporting. React, Vue, Next.js, NestJS, Node and Ruby on Rails."
   },
   "nav": [
     { "title": "About", "path": "/#about" },
