@@ -1,10 +1,8 @@
 import Image from "next/image";
-import { CiShare1 } from "react-icons/ci";
-import { GrStatusGoodSmall } from "react-icons/gr";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import useGTM from "../hooks/useGTM";
 
-export default function Card({ project }) {
+export default function Card({ project, l }) {
   const { trackEvent } = useGTM();
 
   const extractTechStack = (description) => {
@@ -47,26 +45,17 @@ export default function Card({ project }) {
           </div>
         )}
         <div className="flex-1">
-          <h3 className="flex items-center gap-x-2 text-lg font-bold">
-            {project.title}
-            <span className="relative group">
-              <GrStatusGoodSmall color={`${project.status == 1? '#22c55e':'#f97316'}`} size="0.5rem"/>
-              <span className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-gray-700 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-                {project.status === 1 ? 'Activo' : 'En pausa'}
-              </span>
-            </span>
-          </h3>
+          <h3 className="text-lg font-bold">{project.title}</h3>
           {hasLink && (
             <a
               href={project.link}
               target="_blank"
+              rel="noopener noreferrer"
               onClick={handleProjectClick}
-              className="flex items-center gap-x-1 text-slate-500 hover:text-slate-300 text-xs truncate transition"
+              className="focus-ring flex items-center gap-x-1 text-slate-500 hover:text-slate-300 text-xs truncate transition"
             >
-              <span>
-                {isGitHub ? <FaGithub /> : <FaExternalLinkAlt />}
-              </span>
-              {isGitHub ? 'Ver en GitHub' : 'Ver Demo'}
+              {isGitHub ? <FaGithub aria-hidden="true" /> : <FaExternalLinkAlt aria-hidden="true" />}
+              {isGitHub ? l.projects.viewRepo : l.projects.viewDemo}
             </a>
           )}
         </div>
@@ -89,7 +78,7 @@ export default function Card({ project }) {
         </div>
       )}
 
-      <h4 className="flex text-xs italic self-end text-slate-400">{project.typeOfWork}</h4>
+      <p className="flex text-xs italic self-end text-slate-400">{project.typeOfWork}</p>
     </article>
   );
 }

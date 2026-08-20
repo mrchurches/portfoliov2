@@ -116,6 +116,8 @@
   },
   "projects": {
     "title": "Projects",
+    "viewRepo": "View on GitHub",
+    "viewDemo": "View demo",
     "content": [
       {
         "title": "Typing Game",
