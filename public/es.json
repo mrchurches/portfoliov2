@@ -6,6 +6,7 @@
   },
   "nav": [
     { "title": "Sobre mí", "path": "/#about" },
+    { "title": "Contacto", "path": "/#contact" },
     { "title": "Experiencia", "path": "/#experience" },
     { "title": "Educación", "path": "/#education" },
     { "title": "Habilidades", "path": "/#skills" },
@@ -183,15 +184,18 @@
   },
   "contact": {
     "title": "Contacto",
+    "copyLabel": "Copiar dirección de email",
+    "copiedLabel": "Email copiado",
     "social": [
       {
         "icon": "FaLinkedin",
         "link": "https://www.linkedin.com/in/laureano-iglesias/"
       },
+      { "icon": "IoLogoGithub", "link": "https://github.com/mrchurches" },
       { "icon": "BiLogoGmail", "link": "mailto:laureanoiglesias34@gmail.com" },
       {
         "icon": "IoDocumentSharp",
-        "link": "https://docs.google.com/document/d/1GH7O1GYF3634YkAL4LiKTZPJcjdQaUoxNTGCOJoSVnU/edit?usp=sharing"
+        "link": "/laureano-iglesias-cv.pdf"
       }
     ]
   },
