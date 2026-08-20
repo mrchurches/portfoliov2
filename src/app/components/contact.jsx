@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 import { BiLogoGmail } from "react-icons/bi";
 import { FaFileDownload, FaLinkedin } from "react-icons/fa";

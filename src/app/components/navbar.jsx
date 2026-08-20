@@ -1,8 +1,13 @@
+"use client";
 import { useEffect } from "react";
+import Link from "next/link";
 import useAnalytics from "../hooks/useAnalytics";
+import { otherLocale } from "../dictionaries";
 
-export default function Navbar({ l, lang, setLang }) {
+export default function Navbar({ l, lang }) {
   const { trackEvent } = useAnalytics();
+  const target = otherLocale(lang);
+
   useEffect(() => {
     const handleScroll = () => {
       const navbar = document.querySelector(".navbar");
@@ -19,20 +24,16 @@ export default function Navbar({ l, lang, setLang }) {
       document.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
   const handleNavClick = (navItem) => {
     trackEvent("navigation_click", {
       section: navItem.title,
-      path: navItem.path
+      path: navItem.path,
     });
   };
 
   const handleLangChange = () => {
-    const newLang = lang === "es" ? "en" : "es";
-    setLang(newLang);
-    trackEvent("language_change", {
-      from: lang,
-      to: newLang
-    });
+    trackEvent("language_change", { from: lang, to: target });
   };
 
   return (
@@ -43,21 +44,23 @@ export default function Navbar({ l, lang, setLang }) {
       {l.nav.map((nav, index) => (
         <a
           key={index}
-          href={`${nav.path}`}
+          // nav.path is stored as "/#about"; the locale segment goes in front.
+          href={`/${lang}${nav.path.slice(1)}`}
           onClick={() => handleNavClick(nav)}
           className="focus-ring hover:text-accent"
         >
           {nav.title}
         </a>
       ))}
-      <button
-        type="button"
+      <Link
+        href={`/${target}`}
+        hrefLang={target}
         aria-label={l.a11y.switchLanguage}
-        className="focus-ring cursor-pointer hover:text-accent"
         onClick={handleLangChange}
+        className="focus-ring hover:text-accent"
       >
-        {lang == "es" ? "EN" : "ES"}
-      </button>
+        {target.toUpperCase()}
+      </Link>
     </nav>
   );
 }

@@ -282,6 +282,14 @@
       }
     ]
   },
+  "meta": {
+    "title": "Laureano Iglesias | Full Stack Developer",
+    "description": "Full Stack Developer with 3+ years shipping production software at startups. React, Vue, Next.js, NestJS, Node and Ruby on Rails. Buenos Aires, Argentina.",
+    "keywords": "full stack developer, react, vue, nextjs, nodejs, ruby on rails, nestjs, argentina, portfolio, web developer",
+    "ogTitle": "Laureano Iglesias - Full Stack Developer",
+    "ogDescription": "Portfolio - Alkemy, Calendico, Nular. React, Vue, Next.js, NestJS, Node, Ruby on Rails.",
+    "ogLocale": "en_US"
+  },
   "a11y": {
     "mainNav": "Main navigation",
     "switchLanguage": "Switch language to Spanish"

@@ -1,4 +1,5 @@
 import { ImageResponse } from "next/og";
+import { getDictionary } from "../dictionaries";
 
 export const alt = "Laureano Iglesias - Full Stack Developer";
 export const size = { width: 1200, height: 630 };
@@ -7,7 +8,9 @@ export const contentType = "image/png";
 // The previous card was the profile photo at 960x562 declared as 1200x630.
 // LinkedIn needs at least 1200x627 for the large card, so anything smaller
 // silently degrades to the small one.
-export default function Image() {
+export default function Image({ params }) {
+  const l = getDictionary(params.lang);
+
   return new ImageResponse(
     (
       <div
@@ -32,29 +35,10 @@ export default function Image() {
               lineHeight: 1.05,
             }}
           >
-            Laureano Iglesias
+            {l.about.title}
           </div>
-          <div
-            style={{
-              display: "flex",
-              fontSize: 40,
-              color: "#fbbf24",
-              marginTop: 18,
-            }}
-          >
-            Full Stack Developer
-          </div>
-          <div
-            style={{
-              display: "flex",
-              fontSize: 28,
-              color: "#a8b3c5",
-              marginTop: 28,
-              maxWidth: 900,
-              lineHeight: 1.4,
-            }}
-          >
-            3+ years shipping production software at startups
+          <div style={{ display: "flex", fontSize: 40, color: "#fbbf24", marginTop: 18 }}>
+            {l.about.role}
           </div>
         </div>
 
@@ -76,15 +60,8 @@ export default function Image() {
               </div>
             ))}
           </div>
-          <div
-            style={{
-              display: "flex",
-              fontSize: 24,
-              color: "#8794aa",
-              marginTop: 32,
-            }}
-          >
-            Buenos Aires (GMT-3) · portfolio-laureano.vercel.app
+          <div style={{ display: "flex", fontSize: 24, color: "#8794aa", marginTop: 32 }}>
+            {l.about.from} · portfolio-laureano.vercel.app
           </div>
         </div>
       </div>
