@@ -12,7 +12,7 @@ Personal portfolio built with Next.js 14 and Tailwind CSS.
 ## Features
 
 - Multi-language support (EN/ES)
-- Google Tag Manager integration
+- Vercel Web Analytics and Speed Insights
 - Responsive design
 
 ## Project Structure
@@ -20,7 +20,7 @@ Personal portfolio built with Next.js 14 and Tailwind CSS.
 ```
 src/app/
 ├── components/     # React components (navbar, about, skills, projects, etc.)
-├── hooks/          # Custom hooks (useGTM)
+├── hooks/          # Custom hooks (useAnalytics)
 ├── page.js         # Main page
 ├── layout.js       # Root layout
 └── globals.css     # Global styles

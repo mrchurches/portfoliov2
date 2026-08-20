@@ -1,8 +1,8 @@
 import { useEffect } from "react";
-import useGTM from "../hooks/useGTM";
+import useAnalytics from "../hooks/useAnalytics";
 
 export default function Navbar({ l, lang, setLang }) {
-  const { trackEvent } = useGTM();
+  const { trackEvent } = useAnalytics();
   useEffect(() => {
     const handleScroll = () => {
       const navbar = document.querySelector(".navbar");

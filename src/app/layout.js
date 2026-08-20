@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import GoogleTagManager from "./components/GoogleTagManager";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -64,8 +65,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="">
       <body className={inter.className} suppressHydrationWarning={true}>
-        <GoogleTagManager />
         {children}
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

@@ -3,7 +3,7 @@ import { BiLogoGmail } from "react-icons/bi";
 import { FaFileDownload, FaLinkedin } from "react-icons/fa";
 import { MdContentCopy } from "react-icons/md";
 import { SiGithub } from "react-icons/si";
-import useGTM from "../hooks/useGTM";
+import useAnalytics from "../hooks/useAnalytics";
 
 const socialIcons = {
   FaLinkedin: FaLinkedin,
@@ -21,7 +21,7 @@ const contactTypes = {
 };
 
 export default function Contact({ l }) {
-  const { trackEvent } = useGTM();
+  const { trackEvent } = useAnalytics();
   const [showCopied, setShowCopied] = useState(false);
 
   const getContactType = (icon) => contactTypes[icon] || icon;

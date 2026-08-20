@@ -1,9 +1,9 @@
 import Image from "next/image";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
-import useGTM from "../hooks/useGTM";
+import useAnalytics from "../hooks/useAnalytics";
 
 export default function Card({ project, l }) {
-  const { trackEvent } = useGTM();
+  const { trackEvent } = useAnalytics();
 
   const stack = Array.isArray(project.stack) ? project.stack : [];
   const links = project.links || {};
