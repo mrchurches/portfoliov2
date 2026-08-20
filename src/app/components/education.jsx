@@ -7,7 +7,7 @@ export default function Education({l, darkMode}){
                     <article key={index} className="flex flex-col gap-y-2">
                         <div className="flex justify-between items-center">
                         <h3 className="font-semibold">{education.institution}</h3>
-                        <h5 className="font-extralight text-sm italic">{education.duration}</h5>
+                        <p className="font-extralight text-sm italic">{education.duration}</p>
                         </div>
                         <h4 className="text-sm font-light italic">{education.title}</h4>
                     </article>

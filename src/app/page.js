@@ -59,12 +59,14 @@ export default function Home() {
           lang={lang}
           setLang={setLang}
         />
-        <About l={l} darkMode={darkMode} />
-        <Contact l={l} darkMode={darkMode} />
-        <Experience l={l} darkMode={darkMode} />
-        <Education l={l} darkMode={darkMode} />
-        <Skills l={l} darkMode={darkMode} />
-        <Projects l={l} darkMode={darkMode} />
+        <main className="flex flex-col gap-y-10">
+          <About l={l} darkMode={darkMode} />
+          <Contact l={l} darkMode={darkMode} />
+          <Experience l={l} darkMode={darkMode} />
+          <Education l={l} darkMode={darkMode} />
+          <Skills l={l} darkMode={darkMode} />
+          <Projects l={l} darkMode={darkMode} />
+        </main>
         <footer id="footer">
           <p className="text-xs text-center italic py-4">{l.footer.content} {new Date().getFullYear()}.</p>
         </footer>

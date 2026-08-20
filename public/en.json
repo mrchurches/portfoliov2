@@ -203,6 +203,10 @@
       }
     ]
   },
+  "a11y": {
+    "mainNav": "Main navigation",
+    "switchLanguage": "Switch language to Spanish"
+  },
   "footer": {
     "content": "All rights reserved ©. Laureano Damian Iglesias"
   }

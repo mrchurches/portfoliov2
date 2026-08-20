@@ -39,6 +39,7 @@ export default function Navbar({ l, darkMode, setDarkMode, lang, setLang }) {
 
   return (
     <nav
+      aria-label={l.a11y.mainNav}
       className={`transition navbar fixed flex gap-x-2 gap-y-4 lg:gap-x-10 flex-wrap z-[1000] rounded-xl p-4 ${
         !darkMode && "text-slate-900"
       } items-center justify-center text-xs md:text-lg`}
@@ -48,17 +49,19 @@ export default function Navbar({ l, darkMode, setDarkMode, lang, setLang }) {
           key={index}
           href={`${nav.path}`}
           onClick={() => handleNavClick(nav)}
-          className="hover:text-yellow-500"
+          className="focus-ring hover:text-yellow-500"
         >
           {nav.title}
         </a>
       ))}
-      <div
-        className={`cursor-pointer hover:text-yellow-500`}
+      <button
+        type="button"
+        aria-label={l.a11y.switchLanguage}
+        className="focus-ring cursor-pointer hover:text-yellow-500"
         onClick={handleLangChange}
       >
         {lang == "es" ? "EN" : "ES"}
-      </div>
+      </button>
     </nav>
   );
 }
