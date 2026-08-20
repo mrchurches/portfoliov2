@@ -4,6 +4,14 @@ import GoogleTagManager from "./components/GoogleTagManager";
 
 const inter = Inter({ subsets: ["latin"] });
 
+// viewportFit: "cover" is what makes env(safe-area-inset-*) resolve to
+// anything other than 0. Without it a bottom-fixed element sits under the
+// iPhone home indicator.
+export const viewport = {
+  themeColor: "#111827",
+  viewportFit: "cover",
+};
+
 // The document is served in English, so every metadata string is in English too.
 // Mixing them makes Google render an English title over a Spanish snippet.
 export const metadata = {
