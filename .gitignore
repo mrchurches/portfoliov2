@@ -38,3 +38,4 @@ next-env.d.ts
 
 # local planning
 ROADMAP.md
+package-lock.json
