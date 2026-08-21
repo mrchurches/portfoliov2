@@ -21,6 +21,7 @@ export default function Dock({ l, lang }) {
   const { trackEvent } = useAnalytics();
   const target = otherLocale(lang);
 
+  const dockRef = useRef(null);
   const listRef = useRef(null);
   const itemRefs = useRef([]);
   const previousLeft = useRef(null);
@@ -65,6 +66,35 @@ export default function Dock({ l, lang }) {
   }, [measure]);
 
   useEffect(() => () => clearTimeout(navTimeout.current), []);
+
+  // Switching language is a navigation, so this component remounts and its
+  // labels change length. Without a starting value the width would jump.
+  // The previous width is parked on the document element, which survives the
+  // soft navigation, so the new instance can animate from it.
+  useLayoutEffect(() => {
+    const dock = dockRef.current;
+    if (!dock) return;
+
+    const root = document.documentElement;
+    const previous = root.style.getPropertyValue("--dock-width");
+    const natural = `${dock.offsetWidth}px`;
+
+    if (previous && previous !== natural) {
+      dock.style.width = previous;
+      void dock.offsetWidth; // reflow, so the next assignment is a transition
+      dock.style.width = natural;
+      dock.addEventListener(
+        "transitionend",
+        () => {
+          // Back to auto, so a late font load can still resize it.
+          dock.style.width = "";
+        },
+        { once: true }
+      );
+    }
+
+    root.style.setProperty("--dock-width", natural);
+  }, [lang, l]);
 
   // Scroll spy. The margins collapse the viewport to a thin band across the
   // middle, so the section crossing that band is the one being read.
@@ -118,7 +148,7 @@ export default function Dock({ l, lang }) {
   };
 
   return (
-    <nav aria-label={l.a11y.mainNav} className="dock">
+    <nav ref={dockRef} aria-label={l.a11y.mainNav} className="dock">
       <span aria-hidden="true" className="dock__layer dock__frost" />
       <span aria-hidden="true" className="dock__layer dock__lens" />
       <span aria-hidden="true" className="dock__layer dock__tint" />

@@ -16,7 +16,7 @@
     "title": "Experience",
     "content": [
       {
-        "title": "Full Stack Developer SSR",
+        "title": "Semi-Senior Full Stack Developer",
         "company": "Alkemy",
         "duration": "Mar 2024 - Present",
         "tasks": [
@@ -118,68 +118,6 @@
     "viewDemo": "View demo",
     "content": [
       {
-        "title": "Typing Game",
-        "description": "Simple game using only Vanilla JS, to improve logical thinking and typing speed.",
-        "stack": [
-          "HTML",
-          "CSS",
-          "JS"
-        ],
-        "links": {
-          "demo": null,
-          "repo": "https://github.com/mrchurches/typing-game"
-        },
-        "image": [
-          "/typing-game-1.png",
-          "/typing-game-2.png"
-        ],
-        "status": 1,
-        "typeOfWork": "Individual Project"
-      },
-      {
-        "title": "World-app",
-        "description": "CRUD with countries API, displays basic stats and activities. Filtering, sorting, searching, and creation of new activities.",
-        "stack": [
-          "PERN"
-        ],
-        "links": {
-          "demo": null,
-          "repo": "https://github.com/mrchurches/PI-Countries-main"
-        },
-        "image": [
-          "/world-app-1.png",
-          "/world-app-2.png",
-          "/world-app-3.png"
-        ],
-        "status": 1,
-        "typeOfWork": "Individual Project"
-      },
-      {
-        "title": "Ecommerce-videogames",
-        "description": "Ecommerce with authentication, local/Google registration, guest mode, shopping cart, Mercado Pago Checkout/PayPal, admin dashboard for user management, bans, sales, and comments, along with a mailing system.",
-        "stack": [
-          "Node.js",
-          "Express",
-          "Auth0",
-          "NodeMailer",
-          "React",
-          "Redux",
-          "Bootstrap",
-          "Postgres"
-        ],
-        "links": {
-          "demo": "https://e-commerce-videogames.vercel.app",
-          "repo": "https://github.com/mrchurches/e-commerce_client"
-        },
-        "image": [
-          "/ecommerce-1.png",
-          "/ecommerce-2.png",
-          "/ecommerce-3.png"
-        ],
-        "status": 2,
-        "typeOfWork": "Group project (6 members)"
-      },
-      {
         "title": "Incident City",
         "description": "Single-player incident simulator for distributed systems. Covers retry storms, queue growth, dead letters and recovery, with a replayable deterministic timeline and an accessible HUD.",
         "stack": [
@@ -230,6 +168,22 @@
         "typeOfWork": "Individual Project"
       },
       {
+        "title": "SimpleSwap",
+        "description": "Simplified Uniswap V2-inspired AMM/DEX with liquidity pools, LP tokens, swaps, constant-product pricing, and an on-chain price oracle.",
+        "stack": [
+          "Solidity",
+          "Ethereum",
+          "AMM"
+        ],
+        "links": {
+          "demo": null,
+          "repo": "https://github.com/mrchurches/SimpleSwap"
+        },
+        "image": [],
+        "status": 2,
+        "typeOfWork": "Individual Project"
+      },
+      {
         "title": "Auction",
         "description": "Solidity auction contract with minimum bid increments, time extensions, refunds, events, and a verified Sepolia deployment.",
         "stack": [
@@ -246,19 +200,65 @@
         "typeOfWork": "Individual Project"
       },
       {
-        "title": "SimpleSwap",
-        "description": "Simplified Uniswap V2-inspired AMM/DEX with liquidity pools, LP tokens, swaps, constant-product pricing, and an on-chain price oracle.",
+        "title": "Typing Game",
+        "description": "Simple game using only Vanilla JS, to improve logical thinking and typing speed.",
         "stack": [
-          "Solidity",
-          "Ethereum",
-          "AMM"
+          "HTML",
+          "CSS",
+          "JS"
         ],
         "links": {
           "demo": null,
-          "repo": "https://github.com/mrchurches/SimpleSwap"
+          "repo": "https://github.com/mrchurches/typing-game"
         },
-        "image": [],
+        "image": [
+          "/typing-game-1.png",
+          "/typing-game-2.png"
+        ],
+        "status": 1,
+        "typeOfWork": "Individual Project"
+      },
+      {
+        "title": "Ecommerce-videogames",
+        "description": "Ecommerce with authentication, local/Google registration, guest mode, shopping cart, Mercado Pago Checkout/PayPal, admin dashboard for user management, bans, sales, and comments, along with a mailing system.",
+        "stack": [
+          "Node.js",
+          "Express",
+          "Auth0",
+          "NodeMailer",
+          "React",
+          "Redux",
+          "Bootstrap",
+          "Postgres"
+        ],
+        "links": {
+          "demo": "https://e-commerce-videogames.vercel.app",
+          "repo": "https://github.com/mrchurches/e-commerce_client"
+        },
+        "image": [
+          "/ecommerce-1.png",
+          "/ecommerce-2.png",
+          "/ecommerce-3.png"
+        ],
         "status": 2,
+        "typeOfWork": "Group project (6 members)"
+      },
+      {
+        "title": "World-app",
+        "description": "CRUD with countries API, displays basic stats and activities. Filtering, sorting, searching, and creation of new activities.",
+        "stack": [
+          "PERN"
+        ],
+        "links": {
+          "demo": null,
+          "repo": "https://github.com/mrchurches/PI-Countries-main"
+        },
+        "image": [
+          "/world-app-1.png",
+          "/world-app-2.png",
+          "/world-app-3.png"
+        ],
+        "status": 1,
         "typeOfWork": "Individual Project"
       }
     ]

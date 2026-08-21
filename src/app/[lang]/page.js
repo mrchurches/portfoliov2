@@ -16,15 +16,18 @@ export default function Home({ params }) {
   return (
     <div className="flex justify-center pt-5 text-fg">
       <div className="flex w-10/12 lg:w-5/12 flex-col h-content gap-y-10">
-        <main className="flex flex-col gap-y-10">
+        {/* Projects are the verifiable proof, so they come before the skill
+            chips and the degrees rather than after them. The dock order has
+            to keep mirroring this, or the scroll spy walks backwards. */}
+        <main key={lang} className="page-enter flex flex-col gap-y-10">
           <About l={l} />
           <Contact l={l} />
           <Experience l={l} />
-          <Education l={l} />
-          <Skills l={l} />
           <Projects l={l} />
+          <Skills l={l} />
+          <Education l={l} />
         </main>
-        <Dock l={l} lang={lang} />
+        <Dock key={lang} l={l} lang={lang} />
 
         <footer id="footer">
           <p className="text-xs text-center italic py-4">

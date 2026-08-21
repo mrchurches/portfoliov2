@@ -16,7 +16,7 @@
     "title": "Experiencia laboral",
     "content": [
       {
-        "title": "Desarrollador Full Stack SSR",
+        "title": "Desarrollador Full Stack Semi-Senior",
         "company": "Alkemy",
         "duration": "mar 2024 - actualidad",
         "tasks": [
@@ -118,68 +118,6 @@
     "viewDemo": "Ver demo",
     "content": [
       {
-        "title": "Typing Game",
-        "description": "Sencillo juego con sólo Vanilla JS, para mejorar el pensamiento lógico y la velocidad de tecleo.",
-        "stack": [
-          "HTML",
-          "CSS",
-          "JS"
-        ],
-        "links": {
-          "demo": null,
-          "repo": "https://github.com/mrchurches/typing-game"
-        },
-        "image": [
-          "/typing-game-1.png",
-          "/typing-game-2.png"
-        ],
-        "status": 1,
-        "typeOfWork": "Proyecto individual"
-      },
-      {
-        "title": "World-app",
-        "description": "CRUD con API de países, muestra estadísticas básicas y actividades. Filtrado, ordenamiento, búsqueda y creación de nuevas actividades.",
-        "stack": [
-          "PERN"
-        ],
-        "links": {
-          "demo": null,
-          "repo": "https://github.com/mrchurches/PI-Countries-main"
-        },
-        "image": [
-          "/world-app-1.png",
-          "/world-app-2.png",
-          "/world-app-3.png"
-        ],
-        "status": 1,
-        "typeOfWork": "Proyecto individual"
-      },
-      {
-        "title": "Ecommerce-videogames",
-        "description": "Ecommerce con autenticación, registro local/Google, modo invitado, carrito de compras, Mercado Pago Checkout/PayPal, panel de administración para gestión de usuarios, baneos, ventas y comentarios, junto con sistema de mailing.",
-        "stack": [
-          "Node.js",
-          "Express",
-          "Auth0",
-          "NodeMailer",
-          "React",
-          "Redux",
-          "Bootstrap",
-          "Postgres"
-        ],
-        "links": {
-          "demo": "https://e-commerce-videogames.vercel.app",
-          "repo": "https://github.com/mrchurches/e-commerce_client"
-        },
-        "image": [
-          "/ecommerce-1.png",
-          "/ecommerce-2.png",
-          "/ecommerce-3.png"
-        ],
-        "status": 2,
-        "typeOfWork": "Proyecto grupal (6 personas)"
-      },
-      {
         "title": "Incident City",
         "description": "Simulador de incidentes en sistemas distribuidos, para un jugador. Cubre tormentas de reintentos, crecimiento de colas, dead letters y recuperación, con una línea de tiempo determinista reproducible y HUD accesible.",
         "stack": [
@@ -230,6 +168,22 @@
         "typeOfWork": "Proyecto individual"
       },
       {
+        "title": "SimpleSwap",
+        "description": "AMM/DEX simplificado inspirado en Uniswap V2, con pools de liquidez, tokens LP, swaps, precios basados en producto constante y un oráculo de precios on-chain.",
+        "stack": [
+          "Solidity",
+          "Ethereum",
+          "AMM"
+        ],
+        "links": {
+          "demo": null,
+          "repo": "https://github.com/mrchurches/SimpleSwap"
+        },
+        "image": [],
+        "status": 2,
+        "typeOfWork": "Proyecto individual"
+      },
+      {
         "title": "Auction",
         "description": "Contrato de subasta en Solidity con incrementos mínimos de puja, extensiones de tiempo, reembolsos, eventos y despliegue verificado en Sepolia.",
         "stack": [
@@ -246,19 +200,65 @@
         "typeOfWork": "Proyecto individual"
       },
       {
-        "title": "SimpleSwap",
-        "description": "AMM/DEX simplificado inspirado en Uniswap V2, con pools de liquidez, tokens LP, swaps, precios basados en producto constante y un oráculo de precios on-chain.",
+        "title": "Typing Game",
+        "description": "Sencillo juego con sólo Vanilla JS, para mejorar el pensamiento lógico y la velocidad de tecleo.",
         "stack": [
-          "Solidity",
-          "Ethereum",
-          "AMM"
+          "HTML",
+          "CSS",
+          "JS"
         ],
         "links": {
           "demo": null,
-          "repo": "https://github.com/mrchurches/SimpleSwap"
+          "repo": "https://github.com/mrchurches/typing-game"
         },
-        "image": [],
+        "image": [
+          "/typing-game-1.png",
+          "/typing-game-2.png"
+        ],
+        "status": 1,
+        "typeOfWork": "Proyecto individual"
+      },
+      {
+        "title": "Ecommerce-videogames",
+        "description": "Ecommerce con autenticación, registro local/Google, modo invitado, carrito de compras, Mercado Pago Checkout/PayPal, panel de administración para gestión de usuarios, baneos, ventas y comentarios, junto con sistema de mailing.",
+        "stack": [
+          "Node.js",
+          "Express",
+          "Auth0",
+          "NodeMailer",
+          "React",
+          "Redux",
+          "Bootstrap",
+          "Postgres"
+        ],
+        "links": {
+          "demo": "https://e-commerce-videogames.vercel.app",
+          "repo": "https://github.com/mrchurches/e-commerce_client"
+        },
+        "image": [
+          "/ecommerce-1.png",
+          "/ecommerce-2.png",
+          "/ecommerce-3.png"
+        ],
         "status": 2,
+        "typeOfWork": "Proyecto grupal (6 personas)"
+      },
+      {
+        "title": "World-app",
+        "description": "CRUD con API de países, muestra estadísticas básicas y actividades. Filtrado, ordenamiento, búsqueda y creación de nuevas actividades.",
+        "stack": [
+          "PERN"
+        ],
+        "links": {
+          "demo": null,
+          "repo": "https://github.com/mrchurches/PI-Countries-main"
+        },
+        "image": [
+          "/world-app-1.png",
+          "/world-app-2.png",
+          "/world-app-3.png"
+        ],
+        "status": 1,
         "typeOfWork": "Proyecto individual"
       }
     ]
