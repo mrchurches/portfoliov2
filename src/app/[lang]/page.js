@@ -19,7 +19,7 @@ export default async function Home({ params }) {
         {/* Projects are the verifiable proof, so they come before the skill
             chips and the degrees rather than after them. The dock order has
             to keep mirroring this, or the scroll spy walks backwards. */}
-        <main key={lang} className="page-enter flex flex-col gap-y-10">
+        <main key={`main-${lang}`} className="page-enter flex flex-col gap-y-10">
           <About l={l} />
           <Contact l={l} />
           <Experience l={l} />
@@ -27,7 +27,7 @@ export default async function Home({ params }) {
           <Skills l={l} />
           <Education l={l} />
         </main>
-        <Dock key={lang} l={l} lang={lang} />
+        <Dock key={`dock-${lang}`} l={l} lang={lang} />
 
         <footer id="footer">
           <p className="text-xs text-center italic py-4">
