@@ -2,146 +2,395 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  height: calc(100vh - 3.149rem);
-}
-
-.image-home {
-  height: calc(100vh - 3.149rem);
-}
-
-#subtitle-home {
-  background-color: #d0bca8;
-}
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
 }
 
-:root {
-  --scrollbar-track-color-dark: #2e4169; /* Color de fondo de la barra de desplazamiento en modo oscuro */
-  --scrollbar-thumb-color-dark: #1c273f; /* Color del indicador de la barra de desplazamiento en modo oscuro */
-  --scrollbar-track-color-light: #f1f1f1; /* Color de fondo de la barra de desplazamiento en modo claro */
-  --scrollbar-thumb-color-light: #888; /* Color del indicador de la barra de desplazamiento en modo claro */
+@layer components {
+  /* Single focus indicator for every interactive element. currentColor keeps it
+     legible on whatever surface the element sits on. */
+  .focus-ring:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+  }
+
+  /* ------------------------------------------------------------------ dock
+     Glass needs something behind it. Over a flat colour, backdrop-filter
+     returns that same flat colour and the whole effect is invisible, which
+     is why the background below exists at all. */
+  .dock {
+    position: fixed;
+    bottom: max(0.75rem, env(safe-area-inset-bottom));
+    left: 50%;
+    transform: translateX(-50%) translateZ(0);
+    z-index: 1000;
+    border-radius: 9999px;
+    isolation: isolate;
+    contain: layout paint;
+    max-width: calc(100vw - 1.5rem);
+    /* Driven from JS on a language change; auto the rest of the time. */
+    transition: width 0.44s cubic-bezier(0.32, 1.28, 0.5, 1);
+    box-shadow:
+      0 8px 32px rgba(0, 0, 0, 0.34),
+      0 2px 8px rgba(0, 0, 0, 0.22);
+  }
+
+  .dock__layer {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+  }
+
+  /* Works in all three engines. */
+  .dock__frost {
+    -webkit-backdrop-filter: blur(14px) saturate(180%) brightness(1.06);
+    backdrop-filter: blur(14px) saturate(180%) brightness(1.06);
+  }
+
+  /* Chromium only, and deliberately its own declaration: Firefox discards the
+     whole backdrop-filter declaration when it contains an unresolvable url()
+     (bugzilla 1961378), so sharing one with the frost above would cost the
+     blur too. @supports cannot gate this — it returns a false positive in
+     Firefox (bugzilla 1995195) — so the layer simply does nothing where the
+     property is unsupported. */
+  .dock__lens {
+    backdrop-filter: url(#dock-refraction);
+  }
+
+  /* The contrast floor, not decoration. Everything above is transparent. */
+  .dock__tint {
+    background: rgba(14, 18, 28, 0.46);
+  }
+
+  .dock__rim {
+    padding: 1px;
+    background: linear-gradient(
+      140deg,
+      rgba(255, 255, 255, 0.85) 0%,
+      rgba(255, 255, 255, 0.12) 35%,
+      rgba(255, 255, 255, 0.04) 62%,
+      rgba(255, 255, 255, 0.45) 100%
+    );
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+
+  .dock__sheen {
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.3) 0%,
+      rgba(255, 255, 255, 0.06) 26%,
+      transparent 56%
+    );
+    mix-blend-mode: screen;
+  }
+
+  .dock__items {
+    animation: fade-in 0.38s ease both;
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 0.125rem;
+    padding: 0.375rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .dock__items::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* One piece of glass that travels along the bar, instead of each item
+     painting its own hover background. It sits behind the labels and
+     deliberately carries no backdrop-filter: glass stacked on glass would
+     refract the frost layer's output rather than the page, which is the
+     case Apple's own guidance tells you not to build. */
+  .dock__indicator {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    border-radius: 9999px;
+    pointer-events: none;
+    background: linear-gradient(
+      160deg,
+      rgba(255, 255, 255, 0.24) 0%,
+      rgba(255, 255, 255, 0.08) 46%,
+      rgba(255, 255, 255, 0.16) 100%
+    );
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.55),
+      inset 0 -1px 0 rgba(255, 255, 255, 0.14),
+      inset 0 0 12px rgba(255, 255, 255, 0.1),
+      0 2px 10px rgba(0, 0, 0, 0.28);
+    /* The two edges travel on the same curve but not at the same time. The
+       leading edge leaves immediately and the trailing one lags, so the pill
+       stretches across the gap and contracts once it arrives. Animating both
+       edges together instead makes it slide rigidly and appear to land on
+       every item it passes. */
+    transition:
+      left 0.44s cubic-bezier(0.32, 1.28, 0.5, 1),
+      width 0.44s cubic-bezier(0.32, 1.28, 0.5, 1);
+  }
+
+  /* Moving right: width grows first so the right edge runs ahead, then left
+     catches up. Moving left: left goes first and width trails it. */
+  .dock__indicator[data-dir="right"] {
+    transition-delay: 0.09s, 0s;
+  }
+
+  .dock__indicator[data-dir="left"] {
+    transition-delay: 0s, 0.09s;
+  }
+
+  .dock__indicator[data-dir="none"] {
+    transition-delay: 0s, 0s;
+  }
+
+  .dock__link {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.75rem;
+    padding: 0 0.9rem;
+    border-radius: 9999px;
+    font-size: 0.8125rem;
+    white-space: nowrap;
+    color: #b9c4d6;
+    transition: color 0.22s ease;
+  }
+
+  .dock__link:hover,
+  .dock__link.is-active {
+    color: #ffffff;
+  }
+
+  .dock__link--primary {
+    color: #d8a63a;
+  }
+
+  .dock__link--primary:hover,
+  .dock__link--primary.is-active {
+    color: #fcd34d;
+  }
+
+  .dock__link--lang {
+    letter-spacing: 0.06em;
+  }
+
+  /* Copy feedback: the whole email item becomes a glass capsule, icon
+     included, instead of a coloured box floating above it. */
+  .contact__item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    border-radius: 9999px;
+    transition: transform 0.5s cubic-bezier(0.34, 1.42, 0.52, 1);
+  }
+
+  .contact__item.is-copied {
+    transform: scale(1.06);
+  }
+
+  .contact__glass {
+    position: absolute;
+    inset: -0.4rem -0.85rem;
+    border-radius: 9999px;
+    opacity: 0;
+    pointer-events: none;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(12px) saturate(180%) brightness(1.1);
+    backdrop-filter: blur(12px) saturate(180%) brightness(1.1);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.6),
+      inset 0 -1px 0 rgba(255, 255, 255, 0.16),
+      inset 0 0 18px rgba(255, 255, 255, 0.12),
+      0 8px 26px rgba(0, 0, 0, 0.34);
+    transition: opacity 0.28s ease;
+  }
+
+  .contact__item.is-copied .contact__glass {
+    opacity: 1;
+  }
+
+  .contact__glass::after {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(
+      105deg,
+      transparent 22%,
+      rgba(255, 255, 255, 0.55) 48%,
+      transparent 74%
+    );
+    transform: translateX(-130%);
+  }
+
+  .contact__item.is-copied .contact__glass::after {
+    animation: contact-sheen 1.15s cubic-bezier(0.28, 0.75, 0.3, 1) 0.06s;
+  }
+
+  .dock__divider {
+    width: 1px;
+    height: 1.25rem;
+    margin: 0 0.25rem;
+    background: rgba(255, 255, 255, 0.18);
+  }
 }
 
-/* Estilos para la barra de desplazamiento en Google Chrome */
+/* Language changes swap every string on the page at once. Without this the
+   whole thing repaints in one hard cut. */
+.page-enter {
+  animation: page-in 0.42s cubic-bezier(0.22, 0.8, 0.3, 1) both;
+}
+
+@keyframes page-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-enter,
+  .dock__items {
+    animation: none;
+  }
+}
+
+@keyframes contact-sheen {
+  to {
+    transform: translateX(130%);
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .contact__glass {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    background: rgb(30, 38, 56);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact__item,
+  .contact__item.is-copied {
+    transform: none;
+    transition: none;
+  }
+  .contact__item.is-copied .contact__glass::after {
+    animation: none;
+  }
+}
+
+/* Sin soporte de backdrop-filter, el vidrio pasa a ser una superficie sólida. */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .dock__tint {
+    background: rgb(14, 18, 28);
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .dock__frost,
+  .dock__lens,
+  .dock__sheen {
+    display: none;
+  }
+  .dock__tint {
+    background: rgb(14, 18, 28);
+  }
+  .dock__rim {
+    background: rgba(255, 255, 255, 0.35);
+  }
+}
+
+@media (prefers-contrast: more) {
+  .dock__tint {
+    background: rgb(10, 12, 20);
+  }
+  .dock__rim {
+    background: rgba(255, 255, 255, 0.6);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dock,
+  .dock * {
+    animation: none !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+:root {
+  /* The site commits to a single dark theme, so these are static.
+     They used to be rewritten from JS on every darkMode change. */
+  --scrollbar-track-color-dark: #2e4169;
+  --scrollbar-thumb-color-dark: #1c273f;
+}
+
+body {
+  /* Low frequency colour so the dock has something to refract. A flat
+     background makes any amount of blur return the same flat colour. */
+  background-color: #111827;
+  background-image:
+    radial-gradient(58rem 38rem at 12% -5%, rgba(56, 132, 255, 0.13), transparent 62%),
+    radial-gradient(46rem 32rem at 88% 12%, rgba(251, 191, 36, 0.08), transparent 60%),
+    radial-gradient(52rem 34rem at 62% 96%, rgba(56, 189, 248, 0.1), transparent 62%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
 ::-webkit-scrollbar {
-  width: 10px; /* Ancho de la barra de desplazamiento */
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(
-    --scrollbar-track-color-dark
-  ); /* Usamos la variable para el color de fondo */
+  background: var(--scrollbar-track-color-dark);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(
-    --scrollbar-thumb-color-dark
-  ); /* Usamos la variable para el color del indicador */
-  border-radius: 5px; /* Radio de borde del indicador de la barra de desplazamiento */
+  background: var(--scrollbar-thumb-color-dark);
+  border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #162038; /* Color fijo más oscuro al pasar el cursor */
-}
-
-.carousel {
-  position: relative;
-}
-
-.carousel-inner {
-  position: relative; /* Agregamos position: relative */
-  display: flex;
-  overflow: hidden;
-}
-
-.carousel-inner img {
-  width: 100%;
-  height: auto; /* Cambiamos height: 100% a height: auto */
-  transition: transform 0.5s ease;
-}
-
-.prev-btn,
-.next-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  font-size: 20px;
-  z-index: 2;
-}
-
-.prev-btn {
-  left: 10px;
-}
-
-.next-btn {
-  right: 10px;
-}
-
-.carousel-inner {
-  display: flex;
-  transition: transform 1s ease;
-}
-
-.carousel-inner img {
-  height: auto;
-}
-
-.active {
-  opacity: 1;
-}
-
-.hidden {
-  opacity: 0;
-}
-
-nav {
-  animation: nav-shadown 1s linear both;
-  animation-timeline: scroll();
-  animation-range: 0 100px;
+  background: #162038;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
+/* The dock floats over the page, so the last content needs room to clear it. */
+#footer {
+  padding-bottom: 5.5rem;
+}
+
 #container_about_image {
   transition: transform 0.5s;
 }
-
-/* #container_about_image:hover {
-  transform: scale(1.1);
-  animation: rotacionInfinita 5s linear infinite;
-}
-
-@keyframes rotacionInfinita {
-  from {
-    transform: rotateY(0deg);
-  }
-  to {
-    transform: rotateY(360deg);
-  }
-} */

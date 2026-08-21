@@ -1,21 +1,22 @@
 {
   "about": {
     "title": "Laureano Damian Iglesias",
-    "from": "Buenos Aires, Argentina",
-    "subtitle": "Desarrollador Full Stack con más de 3 años de experiencia en startups. Capacidad para adaptarme en ambientes dinámicos, facilidad y eficacia para trabajar en equipo y predisposición al aprendizaje."
+    "role": "Desarrollador Full Stack",
+    "from": "Buenos Aires, Argentina (GMT-3)",
+    "status": "Inglés B2",
+    "subtitle": "Más de 3 años entregando software en producción en startups. Hoy en Alkemy, construyendo automatización interna con IA y reportes PDF dinámicos. React, Vue, Next.js, NestJS, Node y Ruby on Rails."
   },
   "nav": [
     { "title": "Sobre mí", "path": "/#about" },
+    { "title": "Contacto", "path": "/#contact", "primary": true },
     { "title": "Experiencia", "path": "/#experience" },
-    { "title": "Educación", "path": "/#education" },
-    { "title": "Habilidades", "path": "/#skills" },
     { "title": "Proyectos", "path": "/#projects" }
   ],
   "experience": {
     "title": "Experiencia laboral",
     "content": [
       {
-        "title": "Desarrollador Full Stack SSR",
+        "title": "Desarrollador Full Stack Semi-Senior",
         "company": "Alkemy",
         "duration": "mar 2024 - actualidad",
         "tasks": [
@@ -113,87 +114,183 @@
   },
   "projects": {
     "title": "Proyectos",
+    "viewRepo": "Ver en GitHub",
+    "viewDemo": "Ver demo",
     "content": [
       {
-        "title": "Typing Game",
-        "description": "Sencillo juego con sólo Vanilla JS, para mejorar el pensamiento lógico y la velocidad de tecleo. Stack: HTML, CSS, JS",
-        "image": ["/typing-game-1.png", "/typing-game-2.png"],
-        "clickeable": false,
-        "status": 1,
-        "typeOfWork": "Proyecto individual"
-      },
-      {
-        "title": "World-app",
-        "description": "CRUD con API de países, muestra estadísticas básicas y actividades. Filtrado, ordenamiento, búsqueda y creación de nuevas actividades. Stack: PERN",
-        "image": ["/world-app-1.png", "/world-app-2.png", "/world-app-3.png"],
-        "clickeable": false,
-        "status": 1,
-        "typeOfWork": "Proyecto individual"
-      },
-      {
-        "title": "Ecommerce-videogames",
-        "description": "Ecommerce con autenticación, registro local/Google, modo invitado, carrito de compras, Mercado Pago Checkout/PayPal, panel de administración para gestión de usuarios, baneos, ventas y comentarios, junto con sistema de mailing. Stack: Node.js, Express, Auth0, NodeMailer, React, Redux, Bootstrap, Postgres",
-        "image": ["/ecommerce-1.png", "/ecommerce-2.png", "/ecommerce-3.png"],
-        "clickeable": false,
-        "status": 2,
-        "typeOfWork": "Proyecto grupal (6 personas)"
-      },
-      {
         "title": "Incident City",
-        "description": "Simulador determinista para un jugador de incidentes de sistemas distribuidos, con tormentas de reintentos, crecimiento de colas, dead letters, recuperación y una línea de tiempo determinista con HUD accesible y replay. Stack: TypeScript, Vite, HTML.",
+        "description": "Simulador de incidentes en sistemas distribuidos, para un jugador. Cubre tormentas de reintentos, crecimiento de colas, dead letters y recuperación, con una línea de tiempo determinista reproducible y HUD accesible.",
+        "stack": [
+          "TypeScript",
+          "Vite",
+          "HTML"
+        ],
+        "links": {
+          "demo": null,
+          "repo": "https://github.com/mrchurches/incident-city"
+        },
         "image": [],
-        "clickeable": false,
         "status": 1,
         "typeOfWork": "Proyecto individual"
       },
       {
         "title": "Personal Context OS",
-        "description": "Espacio de trabajo local-first para indexar documentos y repositorios seleccionados. Calcula hashes de las fuentes, detecta cambios, mantiene el contenido de las fuentes fuera del índice y define límites antes de la recuperación, generación y mantenimiento autónomo. Stack: JavaScript, Node.js, npm.",
+        "description": "Espacio de trabajo local-first para indexar documentos y repositorios seleccionados. Calcula hashes de las fuentes, detecta cambios, mantiene el contenido de las fuentes fuera del índice y define límites antes de la recuperación, generación y mantenimiento autónomo.",
+        "stack": [
+          "JavaScript",
+          "Node.js",
+          "npm"
+        ],
+        "links": {
+          "demo": null,
+          "repo": "https://github.com/mrchurches/personal-context-os"
+        },
         "image": [],
-        "clickeable": false,
         "status": 1,
         "typeOfWork": "Proyecto individual"
       },
       {
         "title": "Restaurant Landing",
-        "description": "Landing page premium de smash burgers enfocada en conversión, con modal y validación de reservas, diseño responsive, animaciones de scroll y navegación con glassmorphism. Stack: TypeScript, Next.js, React, Tailwind CSS, Framer Motion.",
-        "link": "https://restaurant-landing-fawn.vercel.app/",
+        "description": "Landing page premium de smash burgers enfocada en conversión, con modal y validación de reservas, diseño responsive, animaciones de scroll y navegación con glassmorphism.",
+        "stack": [
+          "TypeScript",
+          "Next.js",
+          "React",
+          "Tailwind CSS",
+          "Framer Motion"
+        ],
+        "links": {
+          "demo": "https://restaurant-landing-fawn.vercel.app",
+          "repo": "https://github.com/mrchurches/restaurant-landing"
+        },
         "image": [],
-        "clickeable": true,
         "status": 1,
         "typeOfWork": "Proyecto individual"
       },
       {
-        "title": "Auction",
-        "description": "Contrato de subasta en Solidity con incrementos mínimos de puja, extensiones de tiempo, reembolsos, eventos y despliegue verificado en Sepolia. Stack: Solidity, Ethereum, Sepolia.",
+        "title": "SimpleSwap",
+        "description": "AMM/DEX simplificado inspirado en Uniswap V2, con pools de liquidez, tokens LP, swaps, precios basados en producto constante y un oráculo de precios on-chain.",
+        "stack": [
+          "Solidity",
+          "Ethereum",
+          "AMM"
+        ],
+        "links": {
+          "demo": null,
+          "repo": "https://github.com/mrchurches/SimpleSwap"
+        },
         "image": [],
-        "clickeable": false,
         "status": 2,
         "typeOfWork": "Proyecto individual"
       },
       {
-        "title": "SimpleSwap",
-        "description": "AMM/DEX simplificado inspirado en Uniswap V2, con pools de liquidez, tokens LP, swaps, precios basados en producto constante y un oráculo de precios on-chain. Stack: Solidity, Ethereum, AMM.",
+        "title": "Auction",
+        "description": "Contrato de subasta en Solidity con incrementos mínimos de puja, extensiones de tiempo, reembolsos, eventos y despliegue verificado en Sepolia.",
+        "stack": [
+          "Solidity",
+          "Ethereum",
+          "Sepolia"
+        ],
+        "links": {
+          "demo": null,
+          "repo": "https://github.com/mrchurches/Auction"
+        },
         "image": [],
-        "clickeable": false,
         "status": 2,
+        "typeOfWork": "Proyecto individual"
+      },
+      {
+        "title": "Typing Game",
+        "description": "Sencillo juego con sólo Vanilla JS, para mejorar el pensamiento lógico y la velocidad de tecleo.",
+        "stack": [
+          "HTML",
+          "CSS",
+          "JS"
+        ],
+        "links": {
+          "demo": null,
+          "repo": "https://github.com/mrchurches/typing-game"
+        },
+        "image": [
+          "/typing-game-1.png",
+          "/typing-game-2.png"
+        ],
+        "status": 1,
+        "typeOfWork": "Proyecto individual"
+      },
+      {
+        "title": "Ecommerce-videogames",
+        "description": "Ecommerce con autenticación, registro local/Google, modo invitado, carrito de compras, Mercado Pago Checkout/PayPal, panel de administración para gestión de usuarios, baneos, ventas y comentarios, junto con sistema de mailing.",
+        "stack": [
+          "Node.js",
+          "Express",
+          "Auth0",
+          "NodeMailer",
+          "React",
+          "Redux",
+          "Bootstrap",
+          "Postgres"
+        ],
+        "links": {
+          "demo": "https://e-commerce-videogames.vercel.app",
+          "repo": "https://github.com/mrchurches/e-commerce_client"
+        },
+        "image": [
+          "/ecommerce-1.png",
+          "/ecommerce-2.png",
+          "/ecommerce-3.png"
+        ],
+        "status": 2,
+        "typeOfWork": "Proyecto grupal (6 personas)"
+      },
+      {
+        "title": "World-app",
+        "description": "CRUD con API de países, muestra estadísticas básicas y actividades. Filtrado, ordenamiento, búsqueda y creación de nuevas actividades.",
+        "stack": [
+          "PERN"
+        ],
+        "links": {
+          "demo": null,
+          "repo": "https://github.com/mrchurches/PI-Countries-main"
+        },
+        "image": [
+          "/world-app-1.png",
+          "/world-app-2.png",
+          "/world-app-3.png"
+        ],
+        "status": 1,
         "typeOfWork": "Proyecto individual"
       }
     ]
   },
   "contact": {
     "title": "Contacto",
+    "copyLabel": "Copiar dirección de email",
+    "copiedLabel": "Email copiado",
     "social": [
       {
         "icon": "FaLinkedin",
         "link": "https://www.linkedin.com/in/laureano-iglesias/"
       },
+      { "icon": "IoLogoGithub", "link": "https://github.com/mrchurches" },
       { "icon": "BiLogoGmail", "link": "mailto:laureanoiglesias34@gmail.com" },
       {
         "icon": "IoDocumentSharp",
-        "link": "https://docs.google.com/document/d/1GH7O1GYF3634YkAL4LiKTZPJcjdQaUoxNTGCOJoSVnU/edit?usp=sharing"
+        "link": "/laureano-iglesias-cv.pdf"
       }
     ]
+  },
+  "meta": {
+    "title": "Laureano Iglesias | Desarrollador Full Stack",
+    "description": "Desarrollador Full Stack con más de 3 años entregando software en producción en startups. React, Vue, Next.js, NestJS, Node y Ruby on Rails. Buenos Aires, Argentina.",
+    "keywords": "desarrollador full stack, react, vue, nextjs, nodejs, ruby on rails, nestjs, argentina, portfolio, desarrollador web",
+    "ogTitle": "Laureano Iglesias - Desarrollador Full Stack",
+    "ogDescription": "Portfolio - Alkemy, Calendico, Nular. React, Vue, Next.js, NestJS, Node, Ruby on Rails.",
+    "ogLocale": "es_AR"
+  },
+  "a11y": {
+    "mainNav": "Navegación principal",
+    "switchLanguage": "Cambiar idioma a inglés"
   },
   "footer": {
     "content": "Todos los derechos reservados ©. Laureano Damian Iglesias"

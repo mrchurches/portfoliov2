@@ -1,0 +1,8 @@
+import next from "eslint-config-next/core-web-vitals";
+
+const config = [
+  { ignores: [".next/**", ".next-check/**", "node_modules/**"] },
+  ...next,
+];
+
+export default config;
