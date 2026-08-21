@@ -8,8 +8,9 @@ export const contentType = "image/png";
 // The previous card was the profile photo at 960x562 declared as 1200x630.
 // LinkedIn needs at least 1200x627 for the large card, so anything smaller
 // silently degrades to the small one.
-export default function Image({ params }) {
-  const l = getDictionary(params.lang);
+export default async function Image({ params }) {
+  const { lang } = await params;
+  const l = getDictionary(lang);
 
   return new ImageResponse(
     (

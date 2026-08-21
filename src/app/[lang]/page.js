@@ -9,8 +9,8 @@ import { getDictionary } from "../dictionaries";
 
 // Server Component. The language comes from the URL, so nothing here has to
 // run on the client to decide what to render.
-export default function Home({ params }) {
-  const { lang } = params;
+export default async function Home({ params }) {
+  const { lang } = await params;
   const l = getDictionary(lang);
 
   return (

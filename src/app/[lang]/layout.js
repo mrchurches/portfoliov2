@@ -20,8 +20,8 @@ export function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
 }
 
-export function generateMetadata({ params }) {
-  const { lang } = params;
+export async function generateMetadata({ params }) {
+  const { lang } = await params;
   if (!isLocale(lang)) return {};
 
   const { meta } = getDictionary(lang);
@@ -66,8 +66,8 @@ export function generateMetadata({ params }) {
   };
 }
 
-export default function RootLayout({ children, params }) {
-  const { lang } = params;
+export default async function RootLayout({ children, params }) {
+  const { lang } = await params;
   if (!isLocale(lang)) notFound();
 
   return (
