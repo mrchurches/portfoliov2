@@ -27,7 +27,7 @@ function preferredLocale(request) {
   return DEFAULT_LOCALE;
 }
 
-export function middleware(request) {
+export function proxy(request) {
   const url = request.nextUrl.clone();
   url.pathname = `/${preferredLocale(request)}`;
   return NextResponse.redirect(url);
